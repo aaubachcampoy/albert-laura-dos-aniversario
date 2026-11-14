@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;display=swap">
+<style>
+html,body{margin:0;padding:0;background:#F4EFE9;-webkit-font-smoothing:antialiased}
+a{color:#B3552F}a:hover{color:#C99A2E}
+input:focus{outline:none}
+::selection{background:#C99A2E;color:#2E1F1B}
+[data-drag]::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family:'DM Sans',sans-serif;color:#3D2A25;overflow-x:clip;">
+<div data-progress="" style="position:fixed;top:0;left:0;right:0;height:2px;background:#C99A2E;transform-origin:0 50%;transform:scaleX(0);z-index:60;"></div>
+<sc-if value="{{ sunShow }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:16px;bottom:16px;z-index:70;display:flex;align-items:center;gap:10px;padding:10px 16px;background:#2E1F1B;color:#F4EFE9;border:1px solid #C99A2E;font-size:13px;font-weight:600;letter-spacing:.08em;">{{ sunMsg }}</div>
+</sc-if>
+<section data-screen-label="Inicio" style="position:relative;min-height:100vh;background:#2E1F1B;color:#F4EFE9;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(40px,6vw,96px);padding:clamp(72px,10vw,120px) clamp(20px,5vw,64px);box-sizing:border-box;overflow:hidden;">
+  <div style="flex:1 1 360px;max-width:560px;position:relative;z-index:2;">
+    <p style="margin:0 0 20px;font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#C99A2E;">23 · 11 · 2024 — 23 · 11 · 2026</p>
+    <h1 style="margin:0;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(80px,13vw,168px);line-height:1;color:#F4EFE9;word-spacing:-.28em;">Laura <span style="color:#C99A2E;">&amp;</span> Albert</h1>
+    <p style="margin:24px 0 0;max-width:420px;font-size:18px;line-height:1.6;color:#DDD8D3;text-wrap:pretty;">Dos años de los nuestros. Baja despacio y toca todo. Hay cinco girasoles escondidos.</p>
+    <div style="margin-top:44px;display:flex;align-items:baseline;gap:18px;">
+      <span data-days="" style="font-family:'Pinyon Script',cursive;font-size:clamp(84px,11vw,128px);line-height:1;color:#F4EFE9;">0</span>
+      <span style="font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">días juntos</span>
+    </div>
+  </div>
+  <div style="flex:0 1 440px;position:relative;width:min(440px,86vw);height:min(540px,104vw);">
+    <div data-par="16" style="position:absolute;left:0;top:0;width:50%;aspect-ratio:4/5;background:#FBF8F3;padding:8px 8px 32px;box-shadow:0 20px 50px rgba(0,0,0,.4);transform:rotate(-8deg);"><img src="fotos/PHOTO-2026-08-16-20-43-52.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div data-par="26" style="position:absolute;right:0;top:4%;width:48%;aspect-ratio:4/5;background:#FBF8F3;padding:8px 8px 32px;box-shadow:0 20px 50px rgba(0,0,0,.4);transform:rotate(7deg);"><img src="fotos/PHOTO-2026-05-21-22-12-57.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div data-par="40" style="position:absolute;left:16%;bottom:0;width:64%;aspect-ratio:4/5;background:#FBF8F3;padding:10px 10px 40px;box-shadow:0 28px 70px rgba(0,0,0,.5);transform:rotate(-1.5deg);"><img src="fotos/PHOTO-2024-12-09-19-17-57.jpg" alt="Laura y Albert bajo las luces" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+  </div>
+  <button data-sun="" data-doodle="girasol" aria-label="Girasol" style="position:absolute;right:clamp(16px,4vw,48px);bottom:clamp(16px,4vw,40px);width:46px;height:46px;padding:0;background:transparent;border:0;cursor:pointer;transition:transform .6s,opacity .6s;"></button>
+</section>
+
+<section data-screen-label="00 Cafependiente" style="background:#DDD8D3;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Viernes, 6 de septiembre de 2024</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Cafependiente</h2>
+      <p style="margin:0 0 0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Aquí nos conocimos. Un café, un viernes por la tarde, en Cafependiente, en Barcelona.</p>
+      <p style="margin:14px 0 0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">El nombre viene de una costumbre de Nápoles: pagas un café de más y alguien se lo toma después. En junio de 2026 te regalé este cuadro de la cafetería.</p>
+      <p style="margin:18px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Canjea el café pendiente</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:24px;">
+      <div style="position:relative;width:min(460px,86vw);aspect-ratio:5/4;">
+        <div style="position:absolute;inset:0;background:#FBF8F3;padding:8px;box-sizing:border-box;box-shadow:0 18px 40px rgba(46,31,27,.22);opacity:{{ cafeEmpty }};transition:opacity 1.1s;"><img src="x/cafe-pendiente.png" alt="La terraza de Cafependiente" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="position:absolute;inset:0;box-shadow:0 24px 50px rgba(46,31,27,.28);opacity:{{ cafeOp }};transform:translateY({{ cafeY }}px);transition:opacity 1.1s cubic-bezier(.22,.61,.36,1),transform 1.1s cubic-bezier(.22,.61,.36,1);"><img src="x/cuadro-cafe.jpg" alt="Cuadro de Cafependiente en acuarela" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;object-position:50% 46%;"></div>
+        <div style="position:absolute;left:50%;top:50%;width:min(300px,66vw);transform:{{ ticketT }};transition:transform 1.1s cubic-bezier(.65,0,.35,1);z-index:2;">
+          <div style="position:relative;background:#FBF8F3;border:2px dashed #B3552F;padding:18px 22px 20px;box-sizing:border-box;box-shadow:0 14px 30px rgba(46,31,27,.22);">
+            <p style="margin:0;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#B3552F;">Vale por</p>
+            <p style="margin:6px 0 0;font-family:'Pinyon Script',cursive;font-size:44px;line-height:1.25;color:#2E1F1B;">un café pendiente</p>
+            <p style="margin:6px 0 0;font-size:13px;color:#5A4640;">Barcelona · viernes por la tarde</p>
+            <span style="position:absolute;right:12px;top:14px;padding:4px 10px;border:2px solid #B3552F;color:#B3552F;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;transform:rotate(-14deg) scale({{ stampS }});opacity:{{ stampOp }};transition:transform .5s cubic-bezier(.22,.61,.36,1) .6s,opacity .3s .6s;">Canjeado</span>
+          </div>
+        </div>
+      </div>
+      <button onClick="{{ canjear }}" style="padding:12px 20px;background:#2E1F1B;color:#F4EFE9;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#B3552F;">{{ cafeBtn }}</button>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="01 La casa" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Septiembre 2024</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">La casa</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Que conste: la casa era mía. La monté y la decoré yo. Luego te mudaste tú y la hicimos un hogar. De mis mejores decisiones. Por muchos slow mornings.</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:18px;">
+      <div data-flip="" style="position:relative;width:min(420px,84vw);aspect-ratio:4/3;background:#FBF8F3;padding:10px;box-sizing:border-box;box-shadow:0 18px 40px rgba(46,31,27,.18);cursor:ew-resize;touch-action:pan-y;">
+        <div style="position:relative;width:100%;height:100%;overflow:hidden;">
+          <img data-flip-img="" src="fotos/PHOTO-2024-09-06-17-20-41.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity .25s;">
+          <img data-flip-img="" src="fotos/PHOTO-2024-09-04-21-25-28.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .25s;">
+          <img data-flip-img="" src="fotos/PHOTO-2024-09-04-21-25-15.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .25s;">
+          <img data-flip-img="" src="fotos/PHOTO-2024-10-24-19-40-59.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .25s;">
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#8A726B;">Cajas</span>
+        <span style="position:relative;display:block;width:140px;height:2px;background:#DDD8D3;"><span data-flip-bar="" style="position:absolute;left:0;top:0;bottom:0;width:25%;background:#B3552F;transition:width .25s;"></span></span>
+        <span style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#8A726B;">Casa</span>
+      </div>
+      <p style="margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8A726B;">Pasa el dedo por la foto para montarla</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Segunda cita" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">2024</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">La segunda cita</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">Un escape room. Ahí quedó demostrado lo listo que soy. Y lo bueno. Y todo lo demás.</p>
+      <p style="margin:18px 0 0;font-size:15px;line-height:1.6;color:#B8ADA6;">Para ver la foto, abre el candado. Pista: el día y el mes de la cita.</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:26px;">
+      <div style="position:relative;width:min(320px,76vw);aspect-ratio:4/5;background:#3D2A25;border:1px solid rgba(244,239,233,.14);">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Pinyon Script',cursive;font-size:48px;color:#6B5650;">cerrado</div>
+        <div style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-sizing:border-box;opacity:{{ lockOpacity }};transform:translateY({{ lockY }}px) rotate(-2deg);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);"><img src="fotos/PHOTO-2024-09-08-22-27-44.jpg" alt="Laura y Albert en el escape room" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="display:flex;gap:8px;align-items:center;">
+          <sc-for list="{{ digits }}" as="d" hint-placeholder-count="4">
+            <button onClick="{{ d.inc }}" aria-label="Cambiar número" style="width:56px;height:72px;background:#C99A2E;color:#2E1F1B;border:2px solid #8A6410;font:600 34px 'DM Sans',sans-serif;font-variant-numeric:tabular-nums;cursor:pointer;margin-right:{{ d.gap }}px;" style-hover="background:#DDB04A;">{{ d.v }}</button>
+          </sc-for>
+        </div>
+        <p style="margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:{{ lockColor }};">{{ lockMsg }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Goig" style="background:#F4EFE9;padding:clamp(80px,10vw,140px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;">
+    <p style="margin:0;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">De las primeras citas</p>
+    <h2 data-reveal="" style="margin:0;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">Goig</h2>
+    <p style="margin:0;max-width:440px;font-size:18px;line-height:1.65;color:#5A4640;">El restaurante de una de nuestras primeras citas.</p>
+    <div data-fan="" style="position:relative;width:min(560px,92vw);height:min(400px,72vw);margin-top:30px;">
+      <div data-fan-card="-14" style="position:absolute;left:28%;bottom:0;width:44%;aspect-ratio:4/5;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;box-shadow:0 14px 34px rgba(46,31,27,.2);transform-origin:50% 120%;transition:transform .9s cubic-bezier(.22,.61,.36,1);"><img src="g/IMG_2450.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-fan-card="14" style="position:absolute;left:28%;bottom:0;width:44%;aspect-ratio:4/5;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;box-shadow:0 14px 34px rgba(46,31,27,.2);transform-origin:50% 120%;transition:transform .9s cubic-bezier(.22,.61,.36,1);"><img src="g/IMG_2452.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div data-fan-card="0" style="position:absolute;left:28%;bottom:0;width:44%;aspect-ratio:4/5;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;box-shadow:0 14px 34px rgba(46,31,27,.2);transform-origin:50% 120%;transition:transform .9s cubic-bezier(.22,.61,.36,1);"><img src="g/IMG_2453.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Carbonara" style="position:relative;background:#DDD8D3;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Septiembre 2024</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">La carbonara</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Me regalaste pasta para hacer una carbonara para los dos. Me la hice con los amigos.</p>
+      <p style="margin:18px 0 0;font-size:15px;line-height:1.6;color:#7D655E;">Esta vez la montamos juntos. Elige los ingredientes.</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:22px;">
+      <div style="position:relative;width:min(420px,84vw);">
+        <div data-doodle="carbonara" style="width:100%;aspect-ratio:240/200;"></div>
+        <div style="position:absolute;right:-4%;top:-16%;width:30%;background:#FBF8F3;padding:6px 6px 22px;box-shadow:0 10px 24px rgba(46,31,27,.2);transform:rotate(8deg) scale({{ carbScale }});opacity:{{ carbPhoto }};transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s;"><img src="fotos/PHOTO-2024-12-01-17-41-20.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:440px;">
+        <sc-for list="{{ ingredients }}" as="ing" hint-placeholder-count="5">
+          <button onClick="{{ ing.add }}" style="padding:11px 18px;background:{{ ing.bg }};color:{{ ing.fg }};border:1px solid #2E1F1B;font:600 13px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s;">{{ ing.label }}</button>
+        </sc-for>
+        <button onClick="{{ addNata }}" style="padding:11px 18px;background:transparent;color:#8A726B;border:1px dashed #8A726B;font:600 13px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;">Nata</button>
+      </div>
+      <p style="margin:0;min-height:40px;font-family:'Pinyon Script',cursive;font-size:34px;color:#B3552F;">{{ carbMsg }}</p>
+    </div>
+  </div>
+</section>
+<section data-screen-label="05 Juegos de palabras" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) 0;">
+  <div data-reveal="" style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,64px);opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+    <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Noviembre 2024</p>
+    <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Juegos de palabras</h2>
+    <p style="margin:0;max-width:520px;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Una tarde me dio por convertir cada cartel de la calle en un juego de palabras. Al día siguiente, ramen.</p>
+    <p style="margin:18px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Arrastra para recorrer la calle →</p>
+  </div>
+  <div data-drag="" style="margin-top:44px;display:flex;gap:clamp(16px,2.4vw,28px);overflow-x:auto;scrollbar-width:none;cursor:grab;padding:20px clamp(20px,5vw,64px) 40px;user-select:none;">
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(-2deg);"><img src="fotos/PHOTO-2024-11-06-19-52-47.jpg" alt="" draggable="false" loading="lazy" style="height:min(420px,60vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(1.5deg) translateY(24px);"><img src="fotos/PHOTO-2024-11-06-19-54-55.jpg" alt="" draggable="false" loading="lazy" style="height:min(420px,60vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(-1deg);"><img src="fotos/PHOTO-2024-11-06-20-05-53.jpg" alt="" draggable="false" loading="lazy" style="height:min(420px,60vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(2deg) translateY(18px);"><img src="fotos/PHOTO-2024-11-06-20-09-12.jpg" alt="" draggable="false" loading="lazy" style="height:min(420px,60vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    <div style="flex:0 0 auto;display:flex;align-items:center;padding:0 10px;"><span style="font-family:'Pinyon Script',cursive;font-size:52px;color:#B3552F;white-space:nowrap;">y al día siguiente…</span></div>
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(-1.5deg);"><img src="fotos/PHOTO-2024-11-07-22-46-45.jpg" alt="" draggable="false" loading="lazy" style="height:min(420px,60vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    <div style="flex:0 0 40px;"></div>
+  </div>
+</section>
+
+<section data-screen-label="06 La puerta" style="background:#B3552F;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#F1D79A;">12 de noviembre de 2024</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">La puerta</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#F4EFE9;text-wrap:pretty;">La puerta de casa es complicada. Tanto, que un día tuvo que venir el cerrajero. Y nunca nos sentiremos pequeñitos.</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:18px;">
+      <div style="position:relative;width:min(300px,70vw);aspect-ratio:9/16;background:#2E1F1B;border:10px solid #6B2A1A;box-sizing:border-box;perspective:1200px;">
+        <video data-vid="" src="fotos/VIDEO-2024-11-12-13-03-41.mp4" playsinline="" loop="" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer;"></video>
+        <button onClick="{{ openDoor }}" aria-label="Abrir la puerta" style="position:absolute;inset:0;background:#F4EFE9;border:0;padding:0;cursor:pointer;transform-origin:0 50%;transform:{{ doorT }};transition:transform 1.1s cubic-bezier(.65,0,.35,1);box-shadow:inset 0 0 0 14px #E8E2DC;">
+          <span style="position:absolute;left:14%;right:14%;top:10%;height:34%;border:2px solid #CFC6BF;"></span>
+          <span style="position:absolute;left:14%;right:14%;top:52%;height:38%;border:2px solid #CFC6BF;"></span>
+          <span style="position:absolute;right:10%;top:50%;width:12px;height:40px;margin-top:-20px;background:#C99A2E;border-radius:6px;"></span>
+        </button>
+      </div>
+      <p style="margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F4EFE9;">{{ doorHint }}</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="07 Bajo las luces" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Diciembre 2024</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">Bajo las luces</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">Una de nuestras primeras fotos juntos.</p>
+      <p style="margin:18px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B8ADA6;">Mueve la luz por la foto. Pulsa para encenderlo todo.</p>
+    </div>
+    <div style="flex:0 1 auto;position:relative;">
+      <div data-spot="" style="position:relative;width:min(400px,80vw);aspect-ratio:4/5;overflow:hidden;cursor:crosshair;touch-action:pan-y;">
+        <img src="fotos/PHOTO-2024-12-09-19-17-57.jpg" alt="Laura y Albert bajo las luces de Navidad" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div data-spot-ov="" style="position:absolute;inset:0;background:rgba(30,20,17,.94);"></div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="08 Andorra" style="position:relative;background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:460px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Navidad 2024</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Andorra</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Más tarde descubrí que en este viaje la relación estuvo en peligro. Yo no lo sabía. La salvé igual.</p>
+      <div style="margin-top:30px;display:flex;flex-direction:column;gap:12px;">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:{{ relColor }};">{{ relLabel }}</span>
+        <span style="position:relative;display:block;height:10px;background:#DDD8D3;"><span style="position:absolute;left:0;top:0;bottom:0;width:{{ relW }}%;background:{{ relColor }};transition:width 1.4s cubic-bezier(.65,0,.35,1),background .6s;"></span></span>
+        <button onClick="{{ saveRel }}" style="align-self:flex-start;margin-top:6px;padding:12px 20px;background:#2E1F1B;color:#F4EFE9;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#B3552F;">{{ relBtn }}</button>
+      </div>
+    </div>
+    <div style="flex:0 1 auto;position:relative;width:min(400px,82vw);height:min(460px,94vw);">
+      <div style="position:absolute;left:0;top:0;width:62%;background:#FBF8F3;padding:8px 8px 32px;box-shadow:0 14px 34px rgba(46,31,27,.2);transform:rotate(-4deg);"><img src="n/andorra2.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      <div style="position:absolute;right:0;bottom:0;width:54%;background:#FBF8F3;padding:8px 8px 32px;box-shadow:0 14px 34px rgba(46,31,27,.24);transform:rotate(5deg);"><img src="n/andorra.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;"></div>
+    </div>
+  </div>
+  <button data-sun="" data-doodle="girasol" aria-label="Girasol" style="position:absolute;left:clamp(10px,3vw,40px);bottom:clamp(20px,4vw,50px);width:38px;height:38px;padding:0;background:transparent;border:0;cursor:pointer;transition:transform .6s,opacity .6s;"></button>
+</section>
+
+<section data-screen-label="09 Mastodonte" style="background:#DDD8D3;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">14 de febrero de 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Mastodonte</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Una noche, dormida, hiciste un ruido de mastodonte. Evidentemente, te lo dije.</p>
+      <p style="margin:14px 0 0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Por San Valentín tuviste tu propio mamut. De peluche, por suerte.</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:14px;">
+      <div style="position:relative;width:min(420px,84vw);aspect-ratio:240/200;">
+        <div style="position:absolute;right:0;top:-24%;width:38%;z-index:2;background:#FBF8F3;padding:6px 6px 24px;box-shadow:0 14px 30px rgba(46,31,27,.22);transform:translateY({{ mamutY }}%) rotate(7deg);opacity:{{ mamutOp }};transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .6s;pointer-events:none;"><img src="fotos/PHOTO-2025-02-14-09-13-36.jpg" alt="Laura con el mamut de peluche" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+        <button onClick="{{ pokeMamut }}" aria-label="Despertar al mamut" data-doodle="mamut" style="position:absolute;inset:0;background:transparent;border:0;padding:0;cursor:pointer;transform:{{ mamutShake }};transition:transform .18s;"></button>
+      </div>
+      <p style="margin:0;font-family:'Pinyon Script',cursive;font-size:34px;color:#B3552F;">{{ mamutHint }}</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="09b Tenerife" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Marzo 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Tenerife</h2>
+      <p style="margin:0 0 0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Una escapada a Tenerife, y un atardecer de los que se quedan.</p>
+      <p style="margin:18px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Arrastra para que caiga el sol</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:18px;width:min(340px,78vw);">
+      <div style="position:relative;width:100%;height:70px;overflow:hidden;border-bottom:2px solid #2E1F1B;">
+        <span style="position:absolute;left:50%;top:{{ tfSunTop }}px;width:46px;height:46px;margin-left:-23px;border-radius:50%;background:{{ tfSunColor }};transition:background .3s;"></span>
+      </div>
+      <div style="width:100%;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.2);"><img src="n/tenerife.jpg" alt="Atardecer en Tenerife" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;filter:{{ tfFilter }};"></div>
+      <input type="range" min="0" max="100" value="{{ sunset }}" onChange="{{ onSunset }}" aria-label="Atardecer" style="width:100%;accent-color:#B3552F;cursor:pointer;">
+      <div style="width:100%;display:flex;justify-content:space-between;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#8A726B;"><span>Mediodía</span><span>Atardecer</span></div>
+      <p style="margin:0;min-height:44px;font-family:'Pinyon Script',cursive;font-size:36px;color:#B3552F;">{{ tfMsg }}</p>
+    </div>
+  </div>
+  <div data-drag="" style="margin:70px calc(-1 * clamp(20px,5vw,64px)) 0;display:flex;gap:clamp(16px,2.4vw,28px);overflow-x:auto;scrollbar-width:none;cursor:grab;padding:20px clamp(20px,5vw,64px) 30px;user-select:none;">
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(-2deg);"><img src="tf/tf1.jpg" alt="En los acantilados de Los Gigantes" draggable="false" loading="lazy" style="height:min(360px,52vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(1.5deg) translateY(20px);"><img src="tf/tf3.jpg" alt="Vistas desde la montaña" draggable="false" loading="lazy" style="height:min(360px,52vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(-1deg);"><video data-vid="" src="tf/tf.mp4" playsinline="" loop="" preload="metadata" style="height:min(360px,52vh);aspect-ratio:9/16;object-fit:cover;display:block;cursor:pointer;"></video></div>
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(2deg) translateY(14px);"><img src="tf/tf4.jpg" alt="Laura cenando pizza" draggable="false" loading="lazy" style="height:min(360px,52vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 12px 30px rgba(46,31,27,.16);transform:rotate(-1.5deg);"><img src="tf/tf2.jpg" alt="Chuletón" draggable="false" loading="lazy" style="height:min(360px,52vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    <div style="flex:0 0 20px;"></div>
+  </div>
+  <p style="margin:6px 0 0;text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Arrastra para ver más · toca el vídeo para el sonido</p>
+</section>
+
+<section data-screen-label="10 Los miércoles" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Todas las semanas</p>
+    <h2 data-reveal="" style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">Los miércoles</h2>
+    <p style="margin:0;max-width:440px;font-size:18px;line-height:1.65;color:#5A4640;">Los miércoles teletrabajo, y solemos escaparnos.</p>
+    <div style="margin-top:44px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(6px,1.4vw,14px);width:min(620px,100%);">
+      <span style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(61,42,37,.2);font-size:16px;font-weight:600;color:#8A726B;">L</span>
+      <span style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(61,42,37,.2);font-size:16px;font-weight:600;color:#8A726B;">M</span>
+      <button onClick="{{ openWed }}" style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:2px solid #B3552F;background:{{ wedBg }};color:{{ wedFg }};font:600 16px 'DM Sans',sans-serif;cursor:pointer;transition:background .3s,color .3s;">X</button>
+      <span style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(61,42,37,.2);font-size:16px;font-weight:600;color:#8A726B;">J</span>
+      <span style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(61,42,37,.2);font-size:16px;font-weight:600;color:#8A726B;">V</span>
+      <span style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(61,42,37,.2);font-size:16px;font-weight:600;color:#8A726B;">S</span>
+      <span style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(61,42,37,.2);font-size:16px;font-weight:600;color:#8A726B;">D</span>
+    </div>
+    <p style="margin:16px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Pulsa el miércoles</p>
+    <div style="overflow:hidden;max-height:{{ wedH }}px;transition:max-height 1s cubic-bezier(.65,0,.35,1);">
+      <div style="padding:40px 0 10px;"><div style="background:#FBF8F3;padding:9px 9px 36px;box-shadow:0 14px 34px rgba(46,31,27,.2);transform:rotate(-2deg);width:min(320px,76vw);"><img src="fotos/PHOTO-2025-07-10-13-35-04.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;"></div></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="11 PortAventura" style="background:#B3552F;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);overflow:hidden;">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#F1D79A;">11 de mayo de 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">PortAventura</h2>
+      <p style="margin:0 0 0;font-size:18px;line-height:1.65;color:#F4EFE9;text-wrap:pretty;">Un día entero de parque de atracciones. Baja despacio y sube a la montaña rusa.</p>
+
+    </div>
+    <div data-coaster="" style="flex:0 1 auto;position:relative;width:min(480px,88vw);aspect-ratio:1/1;">
+      <div data-cphoto="0.12" style="position:absolute;left:2%;top:0;width:27%;z-index:2;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:6px 6px 22px;box-shadow:0 12px 26px rgba(0,0,0,.3);opacity:0;transform:translateY(24px) rotate(-6deg);transition:opacity .6s,transform .8s cubic-bezier(.22,.61,.36,1);"><img src="fotos/PHOTO-2025-05-11-21-33-37.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;"></div>
+      <div data-cphoto="0.5" style="position:absolute;left:37%;top:4%;width:27%;z-index:2;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:6px 6px 22px;box-shadow:0 12px 26px rgba(0,0,0,.3);opacity:0;transform:translateY(24px) rotate(4deg);transition:opacity .6s,transform .8s cubic-bezier(.22,.61,.36,1);"><img src="fotos/PHOTO-2025-05-11-21-35-52.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;"></div>
+      <div data-cphoto="0.82" style="position:absolute;right:2%;top:0;width:27%;z-index:2;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:6px 6px 22px;box-shadow:0 12px 26px rgba(0,0,0,.3);opacity:0;transform:translateY(24px) rotate(-3deg);transition:opacity .6s,transform .8s cubic-bezier(.22,.61,.36,1);"><img src="fotos/PHOTO-2025-05-11-21-32-50.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;"></div>
+      <svg viewBox="0 0 400 300" style="position:absolute;left:0;bottom:0;width:100%;height:75%;overflow:visible;">
+        <g data-supports="" stroke="rgba(244,239,233,.45)" stroke-width="2"></g>
+        <path data-track="" d="M 6 268 L 40 268 C 82 268 92 34 142 34 C 188 34 192 226 232 226 C 266 226 272 104 302 104 C 332 104 342 246 370 246 L 396 246" fill="none" stroke="#6B2A1A" stroke-width="10" stroke-linecap="round"></path>
+        <path d="M 6 268 L 40 268 C 82 268 92 34 142 34 C 188 34 192 226 232 226 C 266 226 272 104 302 104 C 332 104 342 246 370 246 L 396 246" fill="none" stroke="#F4EFE9" stroke-width="10" stroke-dasharray="2 9" opacity=".6"></path>
+        <path d="M 6 268 L 40 268 C 82 268 92 34 142 34 C 188 34 192 226 232 226 C 266 226 272 104 302 104 C 332 104 342 246 370 246 L 396 246" fill="none" stroke="#F4EFE9" stroke-width="3" stroke-linecap="round"></path>
+        <line x1="0" y1="292" x2="400" y2="292" stroke="#F4EFE9" stroke-width="3"></line>
+        <g data-cart="" transform="translate(20 268)"><circle cx="-6" cy="-21" r="4.5" fill="#F4EFE9" stroke="#2E1F1B" stroke-width="1.5"></circle><circle cx="6" cy="-21" r="4.5" fill="#F4EFE9" stroke="#2E1F1B" stroke-width="1.5"></circle><rect x="-16" y="-17" width="32" height="13" rx="3" fill="#C99A2E" stroke="#2E1F1B" stroke-width="2"></rect><circle cx="-9" cy="-3" r="3" fill="#2E1F1B"></circle><circle cx="9" cy="-3" r="3" fill="#2E1F1B"></circle></g>
+      </svg>
+    </div>
+  </div>
+</section>
+<section data-screen-label="12 Can Anglès" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Junio 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Can Anglès y Casa Escarré</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Nuestros sitios de siempre: Can Anglès y Casa Escarré. Ese junio también hubo playa, y la camiseta de La Mamola, que hice yo.</p>
+    </div>
+    <div style="flex:0 1 auto;">
+      <div data-stack="" style="position:relative;width:min(330px,76vw);aspect-ratio:4/5;cursor:pointer;">
+        <div data-card="" style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);opacity:0;transform:translateY(70px);transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s;"><img src="x/casa-escarre.png" alt="Casa Escarré" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div><div data-card="" style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);opacity:0;transform:translateY(70px);transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s;"><img src="fotos/PHOTO-2025-06-18-11-08-03.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div data-card="" style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);opacity:0;transform:translateY(70px);transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s;"><img src="fotos/PHOTO-2025-06-15-15-33-49.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div data-card="" style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);opacity:0;transform:translateY(70px);transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s;"><img src="fotos/PHOTO-2025-06-11-20-14-15.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
+      <p style="margin:22px 0 0;text-align:center;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#8A726B;">Pulsa para pasar</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="13 Francia" style="position:relative;background:#DDD8D3;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);overflow:hidden;">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:30px;">
+      <div data-reveal="" style="flex:1 1 300px;max-width:480px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+        <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Junio 2025</p>
+        <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Francia</h2>
+        <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Pueblos, helados, playa de piedras y mejillones con patatas, como allí.</p>
+      </div>
+      <div data-doodle="mejillones" style="flex:0 0 auto;width:min(260px,60vw);aspect-ratio:240/200;"></div>
+    </div>
+    <div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(18px,3vw,32px);">
+      <div data-tilt-card="-6" style="background:#FBF8F3;padding:9px 9px 34px;box-shadow:0 14px 34px rgba(46,31,27,.18);"><img src="n/francia2.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;"></div>
+      <div data-tilt-card="5" style="background:#FBF8F3;padding:9px 9px 34px;box-shadow:0 14px 34px rgba(46,31,27,.18);"><img src="n/francia.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;"></div>
+      <div data-tilt-card="-3" style="background:#FBF8F3;padding:9px 9px 34px;box-shadow:0 14px 34px rgba(46,31,27,.18);"><img src="fotos/PHOTO-2025-06-21-18-19-22%202.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;"></div>
+      <div data-tilt-card="6" style="background:#FBF8F3;padding:9px 9px 34px;box-shadow:0 14px 34px rgba(46,31,27,.18);"><img src="fotos/PHOTO-2025-06-21-18-19-23.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;"></div>
+    </div>
+  </div>
+  <button data-sun="" data-doodle="girasol" aria-label="Girasol" style="position:absolute;right:clamp(10px,3vw,40px);top:clamp(20px,4vw,50px);width:34px;height:34px;padding:0;background:transparent;border:0;cursor:pointer;transition:transform .6s,opacity .6s;"></button>
+</section>
+
+<section data-screen-label="14 Sobres" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Verano 2025</p>
+    <h2 data-reveal="" style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">Sobrecitos marrones</h2>
+    <p style="margin:0;max-width:520px;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Te fuiste un mes y pico de vacaciones. Hablábamos, nos veíamos cuando se podía y nos dejábamos sobrecitos marrones con papel naranja dentro.</p>
+    <div style="margin-top:clamp(120px,14vw,170px);display:flex;flex-wrap:wrap;justify-content:center;gap:150px clamp(30px,5vw,70px);">
+      <sc-for list="{{ envelopes }}" as="e" hint-placeholder-count="2">
+        <button onClick="{{ e.toggle }}" aria-label="Abrir sobre" style="position:relative;width:min(300px,78vw);aspect-ratio:3/2;background:transparent;border:0;padding:0;cursor:pointer;perspective:900px;transform:rotate({{ e.rot }}deg);">
+          <span style="position:absolute;inset:0;background:#7E5234;"></span>
+          <span style="position:absolute;left:7%;right:7%;top:6%;bottom:6%;z-index:{{ e.letterZ }};background:#D9772E;padding:7px;box-sizing:border-box;transform:translateY({{ e.letterY }}%);transition:transform .9s cubic-bezier(.22,.61,.36,1) {{ e.delay }}s;"><img src="{{ e.src }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></span>
+          <span style="position:absolute;inset:0;z-index:2;background:#946140;clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);"></span>
+          <span style="position:absolute;left:0;right:0;top:0;height:58%;background:#6E4529;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;transform:rotateX({{ e.flap }}deg);transition:transform .6s cubic-bezier(.65,0,.35,1);z-index:{{ e.flapZ }};"></span>
+        </button>
+      </sc-for>
+    </div>
+    <p style="margin:34px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Pulsa un sobre</p>
+  </div>
+</section>
+
+<section data-screen-label="14b La carta" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Verano 2025</p>
+    <h2 data-reveal="" style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">La carta</h2>
+    <p style="margin:0;max-width:480px;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">Ese mes te escribí un texto. No sé cómo, conseguiste leerlo de estrangis. Aquí está otra vez, con sus condiciones.</p>
+    <sc-if value="{{ letterClosed }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:56px;display:flex;flex-direction:column;align-items:center;gap:26px;">
+        <button onClick="{{ letterAsk }}" aria-label="Abrir la carta" style="position:relative;width:min(380px,84vw);aspect-ratio:3/2;background:transparent;border:0;padding:0;cursor:pointer;">
+          <span style="position:absolute;inset:0;background:#E9DFD0;box-shadow:0 24px 50px rgba(0,0,0,.4);"></span>
+          <span style="position:absolute;left:0;right:0;top:0;height:56%;background:#DDD0BD;clip-path:polygon(0 0,100% 0,50% 100%);"></span>
+          <span style="position:absolute;left:50%;top:56%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:#8E2A1C;box-shadow:inset 0 0 0 5px #A8382A;display:flex;align-items:center;justify-content:center;font-family:'Pinyon Script',cursive;font-size:30px;color:#F1D79A;">A</span>
+          <span style="position:absolute;left:0;right:0;bottom:12%;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8E2A1C;">Solo abrir si eres una flipada</span>
+        </button>
+        <sc-if value="{{ letterAsking }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+            <p style="margin:0;font-family:'Pinyon Script',cursive;font-size:40px;color:#C99A2E;">¿Eres una flipada?</p>
+            <div style="position:relative;display:flex;gap:14px;">
+              <button onClick="{{ letterYes }}" style="padding:12px 26px;background:#C99A2E;color:#2E1F1B;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#DDB04A;">Sí, mucho</button>
+              <button onMouseEnter="{{ letterDodge }}" onClick="{{ letterDodge }}" style="padding:12px 26px;background:transparent;color:#F4EFE9;border:1px solid #6B5650;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transform:translate({{ noX }}px,{{ noY }}px);transition:transform .25s cubic-bezier(.22,.61,.36,1);">No</button>
+            </div>
+            <p style="margin:0;min-height:22px;font-size:14px;color:#B8ADA6;">{{ noMsg }}</p>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+    <sc-if value="{{ letterOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:56px;width:100%;background:#F7F1E6;color:#3D2A25;padding:clamp(28px,6vw,64px);box-sizing:border-box;text-align:left;box-shadow:0 30px 70px rgba(0,0,0,.45);transform:rotate(-.6deg);">
+        <p data-letter="" style="margin:0 0 20px;font-size:clamp(17px,1.6vw,19px);line-height:1.75;text-wrap:pretty;opacity:0;transform:translateY(12px);transition:opacity 1s cubic-bezier(.22,.61,.36,1) 0.0s,transform 1s cubic-bezier(.22,.61,.36,1) 0.0s;">No sé exactamente cuándo pasó, pero me di cuenta de que dormir contigo es una de las cosas más bonitas. No por el descanso, sino por lo que representa: paz, hogar, compañía. A tu lado es más fácil todo, incluso los días que pesan por el trabajo u otras historias. A tu lado me descubro. A veces en silencio (nunca incómodos), a veces entre risas, siempre en equipo. Me haces mejor. Sin exigencias, sin quererlo, solo por cómo eres.</p>
+        <p data-letter="" style="margin:0 0 20px;font-size:clamp(17px,1.6vw,19px);line-height:1.75;text-wrap:pretty;opacity:0;transform:translateY(12px);transition:opacity 1s cubic-bezier(.22,.61,.36,1) 0.7s,transform 1s cubic-bezier(.22,.61,.36,1) 0.7s;">Y es que no he conocido a nadie como tú. Tan buena. Tan generosa. Tan atenta con todo. Veo como lo das todo con tus amigos, con tu familia, con el trabajo, en cada detalle. A veces pienso que no tienes ni idea de lo grande que eres. Y me siento afortunado por compartir contigo incluso las cosas más pequeñas, como elegir juntos dónde cenar o descubrir un rincón nuevo de Tenerife.</p>
+        <p data-letter="" style="margin:0 0 20px;font-size:clamp(17px,1.6vw,19px);line-height:1.75;text-wrap:pretty;opacity:0;transform:translateY(12px);transition:opacity 1s cubic-bezier(.22,.61,.36,1) 1.4s,transform 1s cubic-bezier(.22,.61,.36,1) 1.4s;">Sé que estos días no habrán sido fáciles. Tampoco los próximos. Ni perfectos, ni cómodos. Solo quiero que sepas que estoy contigo. No como quien acompaña a alguien a desayunar de forquilla, sino como parte de algo más grande. Porque somos un equipo. Un equipazo. Y eso no lo cambio.</p>
+        <p data-letter="" style="margin:0 0 20px;font-size:clamp(17px,1.6vw,19px);line-height:1.75;text-wrap:pretty;opacity:0;transform:translateY(12px);transition:opacity 1s cubic-bezier(.22,.61,.36,1) 2.1s,transform 1s cubic-bezier(.22,.61,.36,1) 2.1s;">Estoy aquí. Para lo bueno, para lo menos bueno, para lo incierto. Para seguir sumando recuerdos y besos.</p>
+        <p data-letter="" style="margin:28px 0 0;font-family:'Pinyon Script',cursive;font-size:clamp(36px,4vw,48px);line-height:1.2;color:#B3552F;opacity:0;transform:translateY(12px);transition:opacity 1s cubic-bezier(.22,.61,.36,1) 2.8s,transform 1s cubic-bezier(.22,.61,.36,1) 2.8s;">Te quiero mucho, Laura. Estoy a tu lado</p>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section data-screen-label="15 Memory" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:400px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Agosto 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">El Memory</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">Por esas fechas te hice un Memory con cosas nuestras. Estas son sus fichas. Aquí tienes otra partida.</p>
+      <p style="margin:22px 0 0;font-size:15px;font-weight:600;letter-spacing:.06em;color:#C99A2E;">{{ memMsg }}</p>
+      <button onClick="{{ memReset }}" style="margin-top:14px;padding:10px 16px;background:transparent;border:1px solid #C99A2E;color:#F4EFE9;font:600 12px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#C99A2E;color:#2E1F1B;">Barajar otra vez</button>
+      <div style="margin-top:30px;width:150px;background:#FBF8F3;padding:6px 6px 22px;transform:rotate(-4deg);"><img src="fotos/PHOTO-2025-08-16-14-22-42.jpg" alt="El Memory original" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+    </div>
+    <div style="flex:0 1 520px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.4vw,14px);width:min(520px,100%);">
+      <sc-for list="{{ memCards }}" as="c" hint-placeholder-count="16">
+        <button onClick="{{ c.flip }}" aria-label="Carta" style="position:relative;aspect-ratio:3/4;background:transparent;border:0;padding:0;cursor:pointer;perspective:700px;">
+          <span style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY({{ c.rot }}deg);transition:transform .55s cubic-bezier(.65,0,.35,1);">
+            <span style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#3D2A25;border:1px solid #C99A2E;display:flex;align-items:center;justify-content:center;font-family:'Pinyon Script',cursive;font-size:clamp(24px,3.4vw,36px);color:#C99A2E;">L&amp;A</span>
+            <span style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:#FBF8F3;padding:4px;box-sizing:border-box;opacity:{{ c.op }};transition:opacity .4s;"><img src="{{ c.src }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></span>
+          </span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="16 Ámsterdam" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Septiembre 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Ámsterdam</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Unos días antes del viaje me corté con un cuchillo. Fuimos igual.</p>
+    </div>
+    <div style="flex:0 1 auto;">
+      <div data-stack="" style="position:relative;width:min(330px,76vw);aspect-ratio:4/5;cursor:pointer;">
+        <div data-card="" style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);opacity:0;transform:translateY(70px);transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s;"><img src="fotos/PHOTO-2025-09-12-18-17-34.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div data-card="" style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);opacity:0;transform:translateY(70px);transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s;"><img src="g/05DCC915-ED18-4DC4-A321-07A73CC2D50D.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div data-card="" style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);opacity:0;transform:translateY(70px);transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s;"><img src="fotos/PHOTO-2025-09-12-18-17-32.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
+      <p style="margin:22px 0 0;text-align:center;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#8A726B;">Pulsa para pasar</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="17 Dixit" style="background:#DDD8D3;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);overflow:hidden;">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;">
+    <p style="margin:0;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Septiembre 2025</p>
+    <h2 data-reveal="" style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;margin:0;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">Dixit casero</h2>
+    <p style="margin:0;max-width:480px;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Jugamos a un Dixit con cartas nuestras. Pulsa una carta para verla de cerca.</p>
+    <div style="position:relative;width:min(720px,96vw);height:min(400px,66vw);margin-top:30px;">
+      <sc-for list="{{ dixitCards }}" as="c" hint-placeholder-count="7">
+        <button onClick="{{ c.pick }}" aria-label="Carta de Dixit" style="position:absolute;left:37%;bottom:0;width:26%;aspect-ratio:2/3;padding:6px;box-sizing:border-box;background:#FBF8F3;border:0;border-radius:10px;cursor:pointer;box-shadow:0 12px 30px rgba(46,31,27,.22);transform-origin:50% 160%;transform:rotate({{ c.rot }}deg) translateY({{ c.lift }}px);transition:transform .5s cubic-bezier(.22,.61,.36,1);z-index:{{ c.z }};" style-hover="z-index:20;">
+          <img src="{{ c.src }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:6px;">
+        </button>
+      </sc-for>
+    </div>
+  </div>
+  <sc-if value="{{ dixitOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ dixitClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(30,20,17,.9);display:flex;align-items:center;justify-content:center;padding:24px;cursor:pointer;">
+      <div style="width:min(420px,86vw);aspect-ratio:2/3;background:#FBF8F3;padding:10px;box-sizing:border-box;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.5);"><img src="{{ dixitSrc }}" alt="Carta de Dixit" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+    </div>
+  </sc-if>
+</section>
+
+<section data-screen-label="17b Quién es quién" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,90px);">
+    <div data-reveal="" style="flex:1 1 280px;max-width:400px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Hecho a mano</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">¿Quién es quién?</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Jugamos a un Quién es quién con tu gente: amigos, familia, Lila y Papa Frita.</p>
+      <p style="margin:18px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Baja caras hasta que quede una</p>
+      <p style="margin:18px 0 0;min-height:44px;font-family:'Pinyon Script',cursive;font-size:36px;color:#B3552F;">{{ qeqMsg }}</p>
+      <button onClick="{{ qeqReset }}" style="margin-top:8px;padding:12px 20px;background:#2E1F1B;color:#F4EFE9;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#B3552F;">Levantar todas</button>
+    </div>
+    <div style="flex:0 1 560px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(6px,1.2vw,12px);width:min(560px,100%);padding:clamp(12px,2vw,20px);background:#B3552F;box-sizing:border-box;">
+      <sc-for list="{{ qeq }}" as="p" hint-placeholder-count="20">
+        <button onClick="{{ p.toggle }}" aria-label="{{ p.name }}" style="position:relative;aspect-ratio:163/227;background:transparent;border:0;padding:0;cursor:pointer;perspective:500px;">
+          <span style="position:absolute;inset:0;transform-origin:50% 100%;transform:rotateX({{ p.rx }}deg);transition:transform .45s cubic-bezier(.65,0,.35,1);background:#FBF8F3;padding:3px;box-sizing:border-box;box-shadow:0 4px 8px rgba(0,0,0,.18);">
+            <img src="{{ p.src }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="18 Casa rural" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Septiembre 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">La casa rural</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">Un fin de semana en una casa rural con amigos. Había diana.</p>
+      <div style="margin-top:26px;width:170px;background:#FBF8F3;padding:6px 6px 24px;transform:rotate(-3deg);"><img src="g/IMG_0083.jpg" alt="Laura con la diana" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:18px;">
+      <div onClick="{{ throwDart }}" style="position:relative;width:min(340px,78vw);aspect-ratio:1;border-radius:50%;background:#1E1411;border:10px solid #3D2A25;box-sizing:border-box;cursor:crosshair;">
+        <span style="position:absolute;inset:4%;border-radius:50%;background:#F4EFE9;"></span>
+        <span style="position:absolute;inset:17%;border-radius:50%;background:#B3552F;"></span>
+        <span style="position:absolute;inset:31%;border-radius:50%;background:#F4EFE9;"></span>
+        <span style="position:absolute;inset:44%;border-radius:50%;background:#C99A2E;"></span>
+        <sc-for list="{{ darts }}" as="d" hint-placeholder-count="0">
+          <span style="position:absolute;left:{{ d.left }}%;top:{{ d.top }}%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#2E1F1B;border:3px solid #F4EFE9;box-sizing:border-box;pointer-events:none;"></span>
+        </sc-for>
+      </div>
+      <p style="margin:0;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C99A2E;">{{ dartMsg }}</p>
+    </div>
+  </div>
+</section>
+<section data-screen-label="19 Cocina" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Otoño 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Aprendizajes de cocina</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Nos gusta cocinar. El pollo, ese día, no estaba de acuerdo. Luego llegó la pizza cubana, que salió mejor.</p>
+      <button onClick="{{ toggleCook }}" style="margin-top:26px;padding:12px 20px;background:#2E1F1B;color:#F4EFE9;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#B3552F;">{{ cookLabel }} →</button>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:16px;">
+      <p style="margin:0;font-family:'Pinyon Script',cursive;font-size:40px;color:#B3552F;">{{ cookTitle }}</p>
+      <div style="position:relative;width:min(330px,76vw);aspect-ratio:4/5;">
+        <div style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);transform:rotate(-2deg);opacity:{{ cookA }};transition:opacity .6s;"><img src="fotos/PHOTO-2025-10-26-11-30-57.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="position:absolute;inset:0;background:#FBF8F3;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);transform:rotate(3deg);opacity:{{ cookB }};transition:opacity .6s;"><img src="g/IMG_0391.jpg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
+      <div style="display:flex;gap:14px;margin-top:10px;">
+        <div style="width:130px;background:#FBF8F3;padding:5px 5px 18px;transform:rotate(-4deg);box-shadow:0 8px 20px rgba(46,31,27,.16);"><img src="g/IMG_0392.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+        <div style="width:130px;background:#FBF8F3;padding:5px 5px 18px;transform:rotate(3deg);box-shadow:0 8px 20px rgba(46,31,27,.16);"><video data-vid="" src="fotos/VIDEO-2026-06-10-18-32-44.mp4" playsinline="" loop="" preload="metadata" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;"></video></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="20 Cerámica" style="background:#DDD8D3;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">15 de noviembre de 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Cerámica</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Te encantan las manualidades, con esas manos prodigiosas. Un día de cerámica, y salió un plato con un pingüino.</p>
+      <div style="margin-top:26px;width:180px;background:#FBF8F3;padding:6px 6px 24px;transform:rotate(-3deg);box-shadow:0 10px 24px rgba(46,31,27,.18);"><img src="fotos/PHOTO-2025-11-15-15-24-33.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:16px;">
+      <div data-spin="" style="width:min(340px,76vw);aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 20px 40px rgba(46,31,27,.25);cursor:grab;touch-action:none;">
+        <img src="g/IMG_3075.jpg" alt="Plato con pingüino" draggable="false" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.15);pointer-events:none;">
+      </div>
+      <p style="margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Gira el plato en el torno</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="21 Un año" style="position:relative;background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Septiembre 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Un año</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Celebramos nuestro primer año en un hotel cerca de Plaza España. La foto, en el espejo.</p>
+    </div>
+    <div style="flex:0 1 auto;position:relative;width:min(320px,74vw);aspect-ratio:3/4;border:12px solid #C99A2E;box-sizing:border-box;box-shadow:0 18px 40px rgba(46,31,27,.2);border-radius:160px 160px 0 0;overflow:hidden;">
+      <img src="g/IMG_0564.jpg" alt="Laura y Albert en el espejo del hotel" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <canvas data-fog="" style="position:absolute;inset:0;width:100%;height:100%;cursor:pointer;touch-action:none;"></canvas>
+    </div>
+  </div>
+  <button data-sun="" data-doodle="girasol" aria-label="Girasol" style="position:absolute;right:clamp(12px,4vw,60px);bottom:clamp(20px,4vw,50px);width:30px;height:30px;padding:0;background:transparent;border:0;cursor:pointer;transition:transform .6s,opacity .6s;"></button>
+</section>
+
+<section data-screen-label="22 El día de jugar" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:460px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Noviembre 2025</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">El día de jugar</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">Fuimos a jugar. Gané yo, como siempre gano en los juegos. Pero luego algo cambió: empezaste a llamarme pringado, y me lo dijiste hasta siete veces.</p>
+      <div style="position:relative;margin-top:28px;width:100%;max-width:420px;height:190px;border:1px dashed rgba(201,154,46,.45);overflow:hidden;">
+        <sc-for list="{{ pringados }}" as="w" hint-placeholder-count="0">
+          <span style="position:absolute;left:{{ w.left }}%;top:{{ w.top }}%;font-family:'Pinyon Script',cursive;font-size:{{ w.size }}px;line-height:1;color:#F4EFE9;white-space:nowrap;transform:rotate({{ w.rot }}deg);opacity:{{ w.op }};transition:opacity .5s;">lo dejamos</span>
+        </sc-for>
+        <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px;background:#2E1F1B;opacity:{{ sevenOp }};transition:opacity .6s;pointer-events:none;">
+          <span style="font-family:'Pinyon Script',cursive;font-size:170px;line-height:1;color:#C99A2E;transform:scale({{ sevenS }}) rotate({{ sevenR }}deg);transition:transform .9s cubic-bezier(.65,0,.35,1);">7</span>
+          <span style="font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#F4EFE9;line-height:1.6;">veces<br>lo dejamos</span>
+        </span>
+      </div>
+      <div style="margin-top:14px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;">
+        <button onClick="{{ sayPringado }}" style="padding:12px 20px;background:#C99A2E;color:#2E1F1B;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#DDB04A;">{{ pringBtn }}</button>
+        <div style="display:flex;gap:5px;">
+          <sc-for list="{{ pringPips }}" as="p" hint-placeholder-count="7">
+            <span style="width:12px;height:12px;border:1.5px solid #C99A2E;background:{{ p.bg }};transition:background .3s;"></span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="flex:0 1 auto;display:flex;gap:16px;align-items:flex-end;">
+      <div style="width:min(240px,48vw);background:#FBF8F3;padding:8px 8px 30px;transform:rotate(-3deg);"><video data-vid="" src="g/IMG_8454.mp4" playsinline="" loop="" preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;cursor:pointer;"></video></div>
+      <div style="width:min(170px,34vw);background:#FBF8F3;padding:6px 6px 24px;transform:rotate(4deg);"><img src="fotos/PHOTO-2025-11-24-19-25-10.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="22b Juegos de mesa" style="background:#DDD8D3;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">En casa</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">Juegos de mesa</h2>
+      <p style="margin:0 0 0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Nos encantan los juegos de mesa y jugamos muchísimo. En casa suelo ganar yo. Tú pierdes, y te enfadas.</p>
+      <p style="margin:14px 0 0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Aquí tienes la prueba. Tira los dados.</p>
+
+      <div style="margin-top:28px;display:flex;align-items:flex-end;gap:22px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <span style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#8A726B;">Laura</span>
+          <span style="width:92px;height:92px;display:flex;align-items:center;justify-content:center;background:#FBF8F3;border:2px solid #2E1F1B;font-size:52px;font-weight:600;font-variant-numeric:tabular-nums;color:#B3552F;transform:rotate({{ diceRot }}deg);transition:transform .07s;">{{ diceL }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <span style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#8A726B;">Albert</span>
+          <span style="width:92px;height:92px;display:flex;align-items:center;justify-content:center;background:#FBF8F3;border:2px solid #2E1F1B;font-size:52px;font-weight:600;font-variant-numeric:tabular-nums;color:#2E1F1B;transform:rotate({{ diceRot }}deg);transition:transform .07s;">{{ diceA }}</span>
+        </div>
+      </div>
+      <div style="margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;">
+        <button onClick="{{ rollDice }}" style="padding:12px 20px;background:#2E1F1B;color:#F4EFE9;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#B3552F;">Tirar los dados</button>
+        <span style="font-size:15px;font-weight:600;letter-spacing:.04em;color:#5A4640;">Laura {{ diceSL }} · Albert {{ diceSA }}</span>
+      </div>
+      <p style="margin:14px 0 0;min-height:24px;font-size:15px;color:#7D655E;">{{ diceMsg }}</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:14px;">
+      <div style="width:min(330px,76vw);background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);transform:rotate(2deg);overflow:hidden;"><img src="x/juego-mesa.jpg" alt="Laura perdiendo una partida" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:60% 30%;display:block;filter:{{ diceFilter }};transition:filter 1s;"></div>
+      <p style="margin:0;min-height:44px;font-family:'Pinyon Script',cursive;font-size:36px;color:#B3552F;">{{ diceCap }}</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="23 La Mamola" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);overflow:hidden;">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">28 de diciembre de 2025</p>
+    <h2 data-reveal="" style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">La Mamola</h2>
+    <p style="margin:0;max-width:500px;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Tu primera foto en La Mamola, mi pueblo. Un sitio muy especial para mí, y ahora también tuyo.</p>
+    <div style="margin-top:56px;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(18px,3vw,36px);">
+      <div data-bob="" style="width:min(250px,70vw);background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 14px 34px rgba(46,31,27,.2);"><img src="fotos/PHOTO-2025-12-28-16-47-22.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      <div data-bob="" style="width:min(250px,70vw);background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 14px 34px rgba(46,31,27,.2);"><img src="fotos/PHOTO-2026-08-16-20-43-51.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      <div data-bob="" style="width:min(250px,70vw);background:#FBF8F3;padding:8px 8px 30px;box-shadow:0 14px 34px rgba(46,31,27,.2);"><img src="fotos/PHOTO-2026-08-16-20-43-52.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+    </div>
+    <div data-doodle="olas" style="margin-top:40px;width:min(520px,90vw);aspect-ratio:240/120;"></div>
+  </div>
+</section>
+
+<section data-screen-label="24 Nueva York" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+      <div data-reveal="" style="flex:1 1 300px;max-width:460px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+        <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Enero 2026</p>
+        <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">Nueva York</h2>
+        <p style="margin:0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">Un viaje muy chulo. En el avión estabas un poco nerviosa: a la vuelta nos mudábamos. Hubo nieve, patinaje, una bola de nieve bien lanzada y el atardecer desde arriba.</p>
+        <p style="margin:16px 0 0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">Allí te di una chapita para el buzón.</p>
+        <div style="margin-top:28px;display:flex;align-items:flex-end;gap:22px;">
+          <div style="position:relative;width:150px;height:120px;background:#C99A2E;border:3px solid #8A6410;box-sizing:border-box;overflow:hidden;">
+            <span style="position:absolute;left:14px;right:14px;top:16px;height:8px;background:#2E1F1B;"></span>
+            <div style="position:absolute;left:12px;right:12px;bottom:14px;padding:8px 6px;background:#F4EFE9;color:#2E1F1B;border:1px solid #2E1F1B;text-align:center;transform:translateY({{ chapitaY }}px);opacity:{{ chapitaOp }};transition:transform .9s cubic-bezier(.22,.61,.36,1),opacity .4s;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.04em;line-height:1.3;">Albert Aubach<br>Laura Mata</div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:.14em;margin-top:2px;">2º 1ª</div>
+            </div>
+          </div>
+          <button onClick="{{ putChapita }}" style="padding:12px 18px;background:transparent;color:#F4EFE9;border:1px solid #C99A2E;font:600 12px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#C99A2E;color:#2E1F1B;">{{ chapitaBtn }}</button>
+        </div>
+      </div>
+      <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="width:min(300px,72vw);background:#FBF8F3;padding:8px 8px 32px;transform:rotate(2deg);"><video data-vid="" src="g/IMG_4549.mp4" playsinline="" loop="" preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;cursor:pointer;"></video></div>
+        <p style="margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B8ADA6;">Toca el vídeo para el sonido</p>
+      </div>
+    </div>
+    <div data-drag="" style="margin-top:70px;display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;cursor:grab;padding:10px 0 20px;user-select:none;">
+      <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;transform:rotate(-1.5deg);"><img src="fotos/PHOTO-2026-03-06-12-46-25.jpg" alt="" draggable="false" loading="lazy" style="height:min(320px,46vh);aspect-ratio:4/3;object-fit:cover;display:block;pointer-events:none;"></div>
+      <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;transform:rotate(2deg);"><img src="fotos/PHOTO-2026-02-06-14-57-11.jpg" alt="" draggable="false" loading="lazy" style="height:min(320px,46vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+      <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;transform:rotate(-1deg);"><img src="g/83B519B9-80D2-489F-BCDF-E1DFC2CFFA7B.jpg" alt="" draggable="false" loading="lazy" style="height:min(320px,46vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+      <div style="flex:0 0 auto;background:#FBF8F3;padding:8px 8px 30px;transform:rotate(1.5deg);"><img src="fotos/PHOTO-2026-01-22-18-21-16.jpg" alt="" draggable="false" loading="lazy" style="height:min(320px,46vh);aspect-ratio:3/4;object-fit:cover;display:block;pointer-events:none;"></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="25 Nuestro piso" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">2 de febrero de 2026</p>
+    <h2 data-reveal="" style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">Nuestro pisito</h2>
+    <p style="margin:0;max-width:480px;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Nos mudamos. Y el primer cumpleaños en casa nueva lo celebramos haciendo pasta.</p>
+    <div style="margin-top:50px;position:relative;width:min(300px,76vw);height:200px;">
+      <sc-for list="{{ candles }}" as="c" hint-placeholder-count="3">
+        <button onClick="{{ c.blow }}" aria-label="Soplar vela" style="position:relative;display:inline-block;width:56px;height:120px;margin:0 10px;background:transparent;border:0;padding:0;cursor:pointer;vertical-align:bottom;">
+          <span style="position:absolute;left:50%;top:6px;width:18px;height:28px;margin-left:-9px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;background:#E6A11F;box-shadow:0 0 22px #E6A11F;opacity:{{ c.flame }};transition:opacity .4s;"></span>
+          <span style="position:absolute;left:50%;top:40px;bottom:0;width:16px;margin-left:-8px;background:repeating-linear-gradient(45deg,#F4EFE9 0 6px,#B3552F 6px 12px);border:2px solid #2E1F1B;box-sizing:border-box;"></span>
+        </button>
+      </sc-for>
+      <span style="position:absolute;left:-6%;right:-6%;bottom:-40px;height:60px;background:#C99A2E;border:2px solid #2E1F1B;box-sizing:border-box;"></span>
+    </div>
+    <p style="margin:64px 0 0;font-family:'Pinyon Script',cursive;font-size:36px;color:#B3552F;">{{ cakeMsg }}</p>
+    <div style="overflow:hidden;max-height:{{ cakeH }}px;transition:max-height 1.2s cubic-bezier(.65,0,.35,1);">
+      <div style="padding:36px 0 10px;display:flex;flex-wrap:wrap;justify-content:center;gap:18px;">
+        <div style="width:min(220px,40vw);background:#FBF8F3;padding:8px 8px 30px;transform:rotate(-3deg);box-shadow:0 12px 30px rgba(46,31,27,.18);"><img src="g/IMG_4069.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+        <div style="width:min(220px,40vw);background:#FBF8F3;padding:8px 8px 30px;transform:rotate(2deg);box-shadow:0 12px 30px rgba(46,31,27,.18);"><img src="g/IMG_4064.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+        <div style="width:min(220px,40vw);background:#FBF8F3;padding:8px 8px 30px;transform:rotate(-1deg);box-shadow:0 12px 30px rgba(46,31,27,.18);"><img src="g/IMG_4065.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section data-screen-label="25b El castillo" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Noches de película</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">Construyendo el castillo</h2>
+      <p style="margin:0 0 0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">El salón de casa. Dos colchones y un edredón en el suelo, la luz muy bajita y una película. Así se construye un castillo.</p>
+
+      <div style="margin-top:28px;display:flex;gap:6px;">
+        <sc-for list="{{ castleSteps }}" as="s" hint-placeholder-count="5">
+          <span style="width:28px;height:4px;background:{{ s.bg }};transition:background .4s;"></span>
+        </sc-for>
+      </div>
+      <button onClick="{{ castleNext }}" style="margin-top:18px;padding:12px 20px;background:#C99A2E;color:#2E1F1B;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#DDB04A;">{{ castleBtn }}</button>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:16px;">
+      <div style="position:relative;width:min(400px,84vw);aspect-ratio:4/5;overflow:hidden;background:#000;box-shadow:0 24px 60px rgba(0,0,0,.45);">
+        <img src="x/salon.jpg" alt="El salón de casa" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 55%;">
+        <span style="position:absolute;left:10%;bottom:20%;width:30%;height:8%;background:#F4EFE9;border-radius:40%;box-shadow:0 4px 10px rgba(0,0,0,.25);opacity:{{ pilOp }};transform:translateY({{ pilY }}px);transition:opacity .6s .3s,transform .8s cubic-bezier(.22,.61,.36,1) .3s;"></span>
+        <span style="position:absolute;left:44%;bottom:21%;width:30%;height:8%;background:#ECE4D8;border-radius:40%;box-shadow:0 4px 10px rgba(0,0,0,.25);opacity:{{ pilOp }};transform:translateY({{ pilY }}px) rotate(3deg);transition:opacity .6s .4s,transform .8s cubic-bezier(.22,.61,.36,1) .4s;"></span>
+        <span style="position:absolute;left:6%;right:1%;bottom:15%;height:12%;background:#E9E1D3;border:2px solid #D3C6B3;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,.3);opacity:{{ m2Op }};transform:translateY({{ m2Y }}%) rotate(-1.5deg);transition:opacity .5s,transform .9s cubic-bezier(.22,.61,.36,1);"></span>
+        <span style="position:absolute;left:3%;right:3%;bottom:3%;height:15%;background:#EFE8DC;border:2px solid #D5C9B8;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,.3);opacity:{{ m1Op }};transform:translateY({{ m1Y }}%);transition:opacity .5s,transform .9s cubic-bezier(.22,.61,.36,1);"></span>
+        <span style="position:absolute;left:-3%;right:-3%;bottom:-3%;height:26%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 16px,rgba(255,255,255,0) 16px 32px),#B9774C;border-radius:46% 40% 0 0 / 30% 24% 0 0;box-shadow:0 -6px 18px rgba(0,0,0,.25);opacity:{{ duvOp }};transform:translateY({{ duvY }}%);transition:opacity .5s,transform 1s cubic-bezier(.22,.61,.36,1);"></span>
+        <span style="position:absolute;inset:0;background:#120904;opacity:{{ dimOp }};transition:opacity 1.6s;pointer-events:none;"></span>
+        <span style="position:absolute;inset:0;background:#E08A3C;mix-blend-mode:multiply;opacity:{{ tintOp }};transition:opacity 1.6s;pointer-events:none;"></span>
+        <span style="position:absolute;inset:0;background:radial-gradient(circle at 79% 42%,rgba(255,196,120,.55) 0,rgba(255,170,90,.16) 14%,rgba(255,170,90,0) 32%),radial-gradient(circle at 70.5% 58%,rgba(255,120,60,.5) 0,rgba(255,120,60,0) 12%);opacity:{{ lampOp }};transition:opacity 1.6s;pointer-events:none;"></span>
+        <span data-tv="" style="position:absolute;left:41.5%;top:41.2%;width:24.2%;height:11%;background:#0c0c0c;opacity:{{ tvOp }};transition:opacity .8s,background .35s,box-shadow .35s;"></span>
+      </div>
+      <p style="margin:0;min-height:44px;font-family:'Pinyon Script',cursive;font-size:36px;color:#C99A2E;">{{ castleCap }}</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="26 Semana Santa" style="background:#DDD8D3;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Semana Santa 2026</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">La hamaca</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Una casa rural y un viaje muy chulo. En la hamaca me contaste lo de las encías en Nueva York. Madre mía, vaya drama montaste.</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;">
+      <div style="width:min(300px,70vw);height:4px;background:#5A3A2A;"></div>
+      <div data-swing="" style="transform-origin:50% -60px;width:min(300px,70vw);background:#FBF8F3;padding:8px 8px 32px;box-shadow:0 18px 40px rgba(46,31,27,.22);margin-top:40px;"><img src="n/ss4.jpg" alt="Laura en la hamaca" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      <div style="margin-top:28px;display:flex;gap:12px;">
+        <div style="width:110px;background:#FBF8F3;padding:5px 5px 16px;transform:rotate(-4deg);"><img src="n/ss1.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+        <div style="width:110px;background:#FBF8F3;padding:5px 5px 16px;transform:rotate(3deg);"><img src="n/ss2.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="27 Londres" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">21 de mayo de 2026</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">Londres</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">Fuimos a Londres a ver a Arde Bogotá. Antes, un rato tumbados en la hierba de un parque.</p>
+      <div style="margin-top:26px;display:flex;gap:14px;align-items:flex-start;"><div style="width:min(170px,40vw);background:#FBF8F3;padding:6px 6px 24px;transform:rotate(-3deg);"><img src="fotos/PHOTO-2026-05-21-22-12-57.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div><div style="width:min(170px,40vw);margin-top:24px;background:#FBF8F3;padding:6px 6px 24px;transform:rotate(4deg);"><img src="g/IMG_8149.jpg" alt="En el concierto de Arde Bogotá" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div></div>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <div style="display:flex;gap:14px;align-items:flex-start;">
+        <div style="width:min(230px,42vw);background:#FBF8F3;padding:7px 7px 28px;transform:rotate(-2deg);"><video data-vid="" src="fotos/VIDEO-2026-05-21-22-12-57.mp4" playsinline="" loop="" preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;cursor:pointer;"></video></div>
+        <div style="width:min(200px,38vw);margin-top:40px;background:#FBF8F3;padding:7px 7px 28px;transform:rotate(3deg);"><video data-vid="" src="fotos/VIDEO-2026-05-21-22-12-57%202.mp4" playsinline="" loop="" preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;cursor:pointer;"></video></div>
+      </div>
+      <p style="margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B8ADA6;">Toca un vídeo para el sonido</p>
+    </div>
+  </div>
+</section>
+<section data-screen-label="29 Mallorca" style="position:relative;background:#DDD8D3;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Verano 2026</p>
+    <h2 data-reveal="" style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">Mallorca</h2>
+    <p style="margin:0;max-width:460px;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Calas, piscina y mucho sol. Te mando unas postales.</p>
+    <div style="margin-top:56px;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,3vw,36px);">
+      <sc-for list="{{ postcards }}" as="c" hint-placeholder-count="3">
+        <button onClick="{{ c.toggle }}" aria-label="Girar postal" style="position:relative;width:min(300px,82vw);aspect-ratio:3/2;background:transparent;border:0;padding:0;cursor:pointer;perspective:1000px;transform:rotate({{ c.rot }}deg);">
+          <span style="position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY({{ c.flip }}deg);transition:transform .8s cubic-bezier(.65,0,.35,1);">
+            <span style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#FBF8F3;box-shadow:0 12px 30px rgba(46,31,27,.2);display:flex;text-align:left;">
+              <span style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 18px;border-right:1px solid rgba(61,42,37,.2);">
+                <span style="font-family:'Pinyon Script',cursive;font-size:40px;line-height:1.1;color:#2E1F1B;">Mallorca</span>
+                <span style="margin-top:4px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">{{ c.label }}</span>
+              </span>
+              <span style="flex:1;position:relative;padding:18px;">
+                <span style="position:absolute;right:14px;top:14px;width:40px;height:48px;border:2px dashed #B3552F;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:#B3552F;">2026</span>
+                <span style="position:absolute;left:16px;right:16px;top:60%;border-bottom:1px solid rgba(61,42,37,.3);"></span>
+                <span style="position:absolute;left:16px;right:16px;top:74%;border-bottom:1px solid rgba(61,42,37,.3);"></span>
+                <span style="position:absolute;left:16px;right:16px;top:88%;border-bottom:1px solid rgba(61,42,37,.3);"></span>
+              </span>
+            </span>
+            <span style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:#FBF8F3;padding:7px;box-sizing:border-box;box-shadow:0 12px 30px rgba(46,31,27,.2);"><img src="{{ c.src }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></span>
+          </span>
+        </button>
+      </sc-for>
+    </div>
+    <p style="margin:30px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Pulsa una postal para darle la vuelta</p>
+  </div>
+  <button data-sun="" data-doodle="girasol" aria-label="Girasol" style="position:absolute;left:clamp(12px,4vw,60px);top:clamp(24px,5vw,60px);width:32px;height:32px;padding:0;background:transparent;border:0;cursor:pointer;transition:transform .6s,opacity .6s;"></button>
+</section>
+
+<section data-screen-label="30 El crucero" style="background:#2E1F1B;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);overflow:hidden;">
+  <div style="max-width:1080px;margin:0 auto;">
+    <div data-reveal="" style="max-width:520px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Septiembre 2026</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">El crucero</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">De crucero por el Mediterráneo. Primero había que llegar al barco. Baja despacio.</p>
+    </div>
+    <div data-cruise="" style="position:relative;margin-top:60px;height:clamp(300px,46vw,480px);">
+      <div data-port="0.5" style="position:absolute;left:2%;top:0;width:28%;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:6px 6px 24px;transform:rotate(-3deg) translateY(20px);opacity:.12;transition:opacity .7s,transform .9s cubic-bezier(.22,.61,.36,1);"><img src="fotos/PHOTO-2026-09-20-21-27-42%202.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      <div data-port="0.7" style="position:absolute;left:36%;top:4%;width:28%;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:6px 6px 24px;transform:rotate(2deg) translateY(20px);opacity:.12;transition:opacity .7s,transform .9s cubic-bezier(.22,.61,.36,1);"><img src="fotos/PHOTO-2026-09-20-21-27-42%203.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      <div data-port="0.9" style="position:absolute;right:2%;top:0;width:28%;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:6px 6px 24px;transform:rotate(-2deg) translateY(20px);opacity:.12;transition:opacity .7s,transform .9s cubic-bezier(.22,.61,.36,1);"><img src="fotos/PHOTO-2026-09-20-21-27-42.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      <span style="position:absolute;left:0;right:0;bottom:22px;border-bottom:2px dashed rgba(201,154,46,.6);"></span>
+      <span style="position:absolute;left:0;right:0;bottom:0;height:12px;background:repeating-linear-gradient(90deg,rgba(244,239,233,.18) 0 18px,rgba(244,239,233,0) 18px 36px);"></span>
+      <span data-say="" style="position:absolute;left:4%;bottom:96px;font-family:'Pinyon Script',cursive;font-size:34px;color:#C99A2E;opacity:0;transition:opacity .4s;">¡Esperad!</span>
+      <span style="position:absolute;left:24%;width:12%;bottom:22px;height:10px;background:#6B5650;"></span>
+      <div data-walker="" style="position:absolute;left:0;bottom:24px;width:clamp(80px,9vw,110px);aspect-ratio:60/48;transform:translateX(-100%);transition:opacity .4s;">
+        <svg viewBox="0 0 60 48" width="100%" height="100%" fill="none" stroke="#F4EFE9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="8" r="4" fill="#F4EFE9"></circle><path d="M14 12 L16 28 M15 16 L27 21 M16 28 L11 44 M16 28 L21 44"></path><path d="M27 20 L29 26 L31 34 L45 34" stroke="#C99A2E"></path><circle cx="37" cy="40" r="7" stroke="#C99A2E"></circle><circle cx="48" cy="44" r="3" stroke="#C99A2E"></circle><circle cx="37" cy="18" r="4" fill="#F4EFE9"></circle><circle cx="34" cy="14.5" r="2.2" fill="#F4EFE9"></circle><path d="M36 22 L37 33 L45 35 L45 42"></path></svg>
+      </div>
+      <div data-ship="" style="position:absolute;left:30%;bottom:18px;width:96px;height:52px;transform:translateX(-50%);">
+        <span style="position:absolute;left:50%;bottom:24px;width:7px;height:12px;margin-left:6px;background:#B3552F;"></span>
+        <span style="position:absolute;left:18px;right:18px;bottom:14px;height:12px;background:#C99A2E;"></span>
+        <span style="position:absolute;left:0;right:0;bottom:0;height:16px;background:#F4EFE9;clip-path:polygon(0 0,100% 0,86% 100%,14% 100%);"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="32 La nariz" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;flex-direction:row-reverse;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">16 de octubre de 2026</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">La nariz</h2>
+      <p style="margin:0 0 0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Me operaron de la nariz y hubo complicaciones. Estuviste ahí todos los días.</p>
+      <p style="margin:18px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A726B;">Quita las tiritas</p>
+      <p style="margin:18px 0 0;min-height:44px;font-family:'Pinyon Script',cursive;font-size:36px;color:#B3552F;">{{ narizMsg }}</p>
+    </div>
+    <div style="flex:0 1 auto;position:relative;width:min(340px,78vw);">
+      <div style="background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:9px 9px 38px;box-shadow:0 14px 34px rgba(46,31,27,.22);transform:rotate(-2deg);"><img src="fotos/PHOTO-2026-10-24-21-21-49.jpg" alt="Laura en el hospital" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;filter:{{ narizFilter }};transition:filter .8s;"></div>
+      <div style="position:absolute;right:-12%;bottom:-8%;width:40%;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:5px 5px 18px;box-shadow:0 10px 24px rgba(46,31,27,.22);transform:rotate(7deg);"><img src="fotos/PHOTO-2026-10-19-15-14-59.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+      <sc-for list="{{ tiritas }}" as="t" hint-placeholder-count="2">
+        <button onClick="{{ t.peel }}" aria-label="Quitar tirita" style="position:absolute;left:50%;top:42%;width:86%;height:15%;margin:-7.5% 0 0 -43%;background:#E3B68C;border:0;border-radius:16px;box-shadow:0 6px 14px rgba(46,31,27,.25);cursor:pointer;transform:{{ t.t }};opacity:{{ t.op }};transition:transform .7s cubic-bezier(.65,0,.35,1),opacity .7s;">
+          <span style="position:absolute;left:36%;right:36%;top:18%;bottom:18%;background:#F3D9BE;border-radius:4px;"></span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="31 Melendi" style="background:#1E1411;color:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);overflow:hidden;">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Noviembre 2026</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#F4EFE9;">Melendi</h2>
+      <p style="margin:0 0 0;font-size:18px;line-height:1.65;color:#DDD8D3;text-wrap:pretty;">El concierto de Melendi. Cantando a gritos, los dos.</p>
+      <p style="margin:18px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B8ADA6;">Toca el vídeo para el sonido</p>
+
+      <button onClick="{{ concertToggle }}" style="margin-top:26px;padding:12px 20px;background:#C99A2E;color:#2E1F1B;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#DDB04A;">{{ concertBtn }}</button>
+    </div>
+    <div style="flex:0 1 auto;position:relative;width:min(460px,88vw);aspect-ratio:1/1;">
+      <sc-for list="{{ lights }}" as="l" hint-placeholder-count="0">
+        <span style="position:absolute;left:{{ l.left }}%;top:{{ l.top }}%;width:{{ l.size }}px;height:{{ l.size }}px;border-radius:50%;background:#FFF3D6;box-shadow:0 0 14px 5px rgba(255,214,140,.55);opacity:{{ l.op }};transition:opacity .6s {{ l.delay }}s;"></span>
+      </sc-for>
+      <div style="position:absolute;left:4%;top:6%;width:56%;z-index:1;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:8px 8px 30px;transform:rotate(-3deg);box-shadow:0 20px 40px rgba(0,0,0,.5);"><img src="fotos/PHOTO-2026-11-03-09-10-10.jpg" alt="En el concierto" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;filter:{{ concertFilter }};transition:filter 1.2s;"></div>
+      <div style="position:absolute;right:3%;bottom:0;width:38%;z-index:1;background:#FBF8F3;padding:6px 6px 24px;box-sizing:border-box;transform:rotate(5deg);box-shadow:0 20px 40px rgba(0,0,0,.5);"><video data-vid="" src="x/melendi.mp4" playsinline="" loop="" preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;cursor:pointer;filter:{{ concertFilter }};transition:filter 1.2s .3s;"></video></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="33 Coppelia" data-hscroll="" style="position:relative;height:360vh;background:#DDD8D3;">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:clamp(60px,11vh,140px) 0 clamp(20px,4vh,60px);box-sizing:border-box;">
+    <div style="padding:0 clamp(20px,5vw,64px);margin-bottom:clamp(16px,3vh,32px);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Por tus 30</p>
+      <h2 style="margin:0;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(48px,6vw,84px);line-height:1.15;color:#2E1F1B;text-wrap:balance;">El universo Coppelia</h2>
+    </div>
+    <div data-htrack="" style="display:flex;align-items:center;gap:clamp(20px,3vw,40px);padding:0 clamp(20px,5vw,64px);will-change:transform;">
+      <div style="flex:0 0 auto;width:min(240px,54vw);display:flex;flex-direction:column;gap:14px;">
+        <div style="background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:10px 10px 40px;box-shadow:0 14px 34px rgba(46,31,27,.2);transform:rotate(-2deg);"><img src="g/7DAC8497-5002-4F57-A878-62621F66AF57.jpg" alt="Laura de pequeña con un helado" loading="lazy" style="width:100%;height:min(32vh,300px);object-fit:cover;display:block;"></div>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#5A4640;">Todo nace de esta foto tuya de pequeña, con un helado.</p>
+      </div>
+      <img src="g/POSTERS_A3_COPPELIA_-_3.png" alt="" loading="lazy" style="flex:0 0 auto;height:min(36vh,400px);aspect-ratio:297/420;object-fit:cover;box-shadow:0 14px 34px rgba(46,31,27,.2);">
+      <img src="g/POSTERS_A3_COPPELIA_-_1.png" alt="" loading="lazy" style="flex:0 0 auto;height:min(36vh,400px);aspect-ratio:297/420;object-fit:cover;box-shadow:0 14px 34px rgba(46,31,27,.2);">
+      <img src="g/POSTERS_A3_COPPELIA_-_2.png" alt="" loading="lazy" style="flex:0 0 auto;height:min(36vh,400px);aspect-ratio:297/420;object-fit:cover;box-shadow:0 14px 34px rgba(46,31,27,.2);">
+      <img src="g/POSTERS_A3_COPPELIA_-_5.png" alt="" loading="lazy" style="flex:0 0 auto;height:min(36vh,400px);aspect-ratio:297/420;object-fit:cover;box-shadow:0 14px 34px rgba(46,31,27,.2);">
+      <img src="g/POSTERS_A3_COPPELIA_-_4.png" alt="" loading="lazy" style="flex:0 0 auto;height:min(36vh,400px);aspect-ratio:297/420;object-fit:cover;box-shadow:0 14px 34px rgba(46,31,27,.2);">
+      <img src="g/IMG_7411.jpg" alt="Bolsas de Coppelia" loading="lazy" style="flex:0 0 auto;height:min(36vh,400px);aspect-ratio:3/4;object-fit:cover;box-shadow:0 14px 34px rgba(46,31,27,.2);">
+      <div style="flex:0 0 auto;width:min(380px,76vw);display:flex;flex-direction:column;gap:14px;">
+        <div style="position:relative;height:min(38vh,370px);">
+          <div style="position:absolute;left:0;top:4%;width:62%;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:8px 8px 32px;box-shadow:0 14px 30px rgba(46,31,27,.22);transform:rotate(-5deg);"><img src="fotos/PHOTO-2026-04-12-20-29-47.jpg" alt="Polaroids de la fiesta" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+          <div style="position:absolute;right:0;bottom:0;width:52%;background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;padding:8px 8px 32px;box-shadow:0 14px 30px rgba(46,31,27,.22);transform:rotate(4deg);"><img src="fotos/PHOTO-2026-04-12-20-29-47%202.jpg" alt="Laura en la puerta de Coppelia" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></div>
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#5A4640;">La fiesta, con sus polaroids.</p>
+      </div>
+      <div style="flex:0 0 auto;width:min(600px,84vw);display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#FBF8F3;padding:8px;box-shadow:0 14px 34px rgba(46,31,27,.22);"><img src="x/malecon.png" alt="Juegos del Malecón by Coppelia" loading="lazy" style="width:100%;aspect-ratio:2576/1245;object-fit:cover;object-position:top;display:block;"></div>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#5A4640;">Juegos del Malecón: seis juegos para jugar en el navegador, todos dentro del universo Coppelia.</p>
+      </div>
+      <div style="flex:0 0 auto;width:min(340px,72vw);display:flex;align-items:center;">
+        <p style="margin:0;font-family:'Pinyon Script',cursive;font-size:clamp(40px,4.4vw,60px);line-height:1.1;color:#2E1F1B;">Treinta años, y un universo entero para ti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="33b Cuatro leches" style="background:#F4EFE9;padding:clamp(90px,12vw,160px) clamp(20px,5vw,64px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(36px,6vw,100px);">
+    <div data-reveal="" style="flex:1 1 300px;max-width:440px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);">
+      <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B3552F;">Universo Coppelia</p>
+      <h2 style="margin:0 0 18px;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(60px,8vw,104px);line-height:1.05;color:#2E1F1B;">La cuatro leches</h2>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:#5A4640;text-wrap:pretty;">Una tarta de cuatro leches: tres leches en el bizcocho y la cuarta, el dulce de leche, encima.</p>
+      <p style="margin:18px 0 0;font-size:15px;line-height:1.6;color:#7D655E;">Móntala tú. Elige los ingredientes.</p>
+    </div>
+    <div style="flex:0 1 auto;display:flex;flex-direction:column;align-items:center;gap:22px;">
+      <div style="position:relative;width:min(400px,82vw);aspect-ratio:5/4;">
+        <span style="position:absolute;left:-4%;right:-4%;bottom:0;height:14%;background:#FBF8F3;border:2.5px solid #2E1F1B;border-radius:50%;box-sizing:border-box;"></span>
+        <span style="position:absolute;left:8%;right:8%;bottom:7%;height:46%;background:radial-gradient(circle,rgba(176,124,58,.35) 1.5px,transparent 2px) 0 0/14px 14px,#EBC67E;border:2.5px solid #2E1F1B;border-radius:6px;box-sizing:border-box;overflow:hidden;opacity:{{ tlCakeOp }};transform:translateY({{ tlCakeY }}px);transition:opacity .5s,transform .7s cubic-bezier(.22,.61,.36,1);">
+          <span style="position:absolute;left:0;right:0;bottom:0;height:{{ tlSoak }}%;background:rgba(255,246,222,.62);border-top:2px dashed rgba(255,255,255,.9);transition:height 1.1s cubic-bezier(.65,0,.35,1);"></span>
+        </span>
+        <span style="position:absolute;left:7%;right:7%;bottom:calc(7% + 46% - 3%);height:11%;opacity:{{ tlDulceOp }};transform:translateY({{ tlDulceY }}px);transition:opacity .5s,transform .8s cubic-bezier(.22,.61,.36,1);">
+          <span style="position:absolute;inset:0;background:#8A5426;border:2.5px solid #2E1F1B;border-radius:10px 10px 4px 4px;box-sizing:border-box;"></span>
+          <span style="position:absolute;left:14%;top:22%;width:30%;height:16%;background:#B07A44;border-radius:999px;opacity:.7;"></span>
+          <span style="position:absolute;left:12%;top:70%;width:7%;height:70%;background:#8A5426;border:2px solid #2E1F1B;border-top:0;border-radius:0 0 999px 999px;box-sizing:border-box;transform-origin:50% 0;transform:scaleY({{ dripS }});transition:transform .9s cubic-bezier(.22,.61,.36,1) 0.3s;"></span>
+          <span style="position:absolute;left:36%;top:70%;width:6%;height:110%;background:#8A5426;border:2px solid #2E1F1B;border-top:0;border-radius:0 0 999px 999px;box-sizing:border-box;transform-origin:50% 0;transform:scaleY({{ dripS }});transition:transform .9s cubic-bezier(.22,.61,.36,1) 0.45s;"></span>
+          <span style="position:absolute;left:58%;top:70%;width:8%;height:60%;background:#8A5426;border:2px solid #2E1F1B;border-top:0;border-radius:0 0 999px 999px;box-sizing:border-box;transform-origin:50% 0;transform:scaleY({{ dripS }});transition:transform .9s cubic-bezier(.22,.61,.36,1) 0.35s;"></span>
+          <span style="position:absolute;left:80%;top:70%;width:6%;height:95%;background:#8A5426;border:2px solid #2E1F1B;border-top:0;border-radius:0 0 999px 999px;box-sizing:border-box;transform-origin:50% 0;transform:scaleY({{ dripS }});transition:transform .9s cubic-bezier(.22,.61,.36,1) 0.5s;"></span>
+        </span>
+        <span style="position:absolute;right:2%;top:2%;width:28%;background:#FBF8F3;padding:6px 6px 22px;box-sizing:border-box;box-shadow:0 10px 24px rgba(46,31,27,.2);transform:rotate(8deg) scale({{ tlScale }});opacity:{{ tlPhoto }};transition:transform .8s cubic-bezier(.22,.61,.36,1),opacity .8s;"><img src="x/cuatro-leches.png" alt="La cuatro leches" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:460px;">
+        <sc-for list="{{ tlIng }}" as="ing" hint-placeholder-count="5">
+          <button onClick="{{ ing.add }}" style="padding:11px 18px;background:{{ ing.bg }};color:{{ ing.fg }};border:1px solid #2E1F1B;font:600 13px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s;">{{ ing.label }}</button>
+        </sc-for>
+        <button onClick="{{ tlTrap }}" style="padding:11px 18px;background:transparent;color:#8A726B;border:1px dashed #8A726B;font:600 13px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;">Fondant</button>
+      </div>
+      <p style="margin:0;min-height:40px;font-family:'Pinyon Script',cursive;font-size:34px;color:#B3552F;text-align:center;">{{ tlMsg }}</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="34 Frase" style="background:#B3552F;color:#F4EFE9;padding:clamp(100px,16vw,200px) clamp(20px,5vw,64px);">
+  <p data-words="" style="margin:0 auto;max-width:1100px;font-family:'Pinyon Script',cursive;font-size:clamp(52px,8vw,112px);line-height:1.15;text-wrap:balance;">Dos años. Un café pendiente, una casa montada y otra estrenada. Un mamut, un pingüino, un castillo de colchones y muchas partidas que pierdes tú. Y todo lo que nos queda.</p>
+</section>
+
+<section data-screen-label="35 El mapa" style="position:relative;background:#2E1F1B;color:#F4EFE9;">
+  <div style="padding:clamp(80px,10vw,130px) clamp(20px,5vw,64px) 0;max-width:1240px;margin:0 auto;">
+    <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">El mapa</p>
+    <h2 style="margin:0;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(64px,10vw,130px);line-height:1;">Por donde hemos ido</h2>
+    <p style="margin:18px 0 0;max-width:460px;font-size:18px;line-height:1.6;color:#DDD8D3;">Baja y el hilo sale de casa hacia cada viaje. Pulsa uno para ver los detalles.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:0 clamp(32px,5vw,80px);max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,64px);">
+    <div data-mapsticky="" style="position:sticky;top:0;flex:1 1 520px;height:100vh;z-index:2;background:#2E1F1B;display:flex;align-items:center;">
+      <div data-map="" style="position:relative;width:100%;height:86%;"></div>
+    </div>
+    <div style="flex:1 1 300px;max-width:400px;margin-left:auto;padding:10vh 0 30vh;position:relative;z-index:1;">
+      <sc-for list="{{ trips }}" as="t" hint-placeholder-count="6">
+        <div data-trip-step="{{ $index }}" style="min-height:72vh;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:.35;transition:opacity .5s;">
+          <span style="font-size:13px;font-weight:600;letter-spacing:.2em;color:#C99A2E;">{{ t.num }} · {{ t.date }}</span>
+          <h3 style="margin:0;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(56px,7vw,88px);line-height:1.05;">{{ t.name }}</h3>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#DDD8D3;text-wrap:pretty;">{{ t.line }}</p>
+          <button onClick="{{ t.open }}" style="align-self:flex-start;margin-top:8px;padding:12px 20px;background:transparent;color:#F4EFE9;border:1px solid #C99A2E;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s;" style-hover="background:#C99A2E;color:#2E1F1B;">Ver el viaje →</button>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="36 El baúl" style="background:#1E1411;color:#F4EFE9;padding:clamp(90px,12vw,150px) clamp(20px,5vw,64px) clamp(80px,10vw,120px);">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Para terminar</p>
+    <h2 style="margin:0;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(72px,11vw,140px);line-height:1;">El baúl</h2>
+    <p style="margin:18px 0 0;max-width:440px;font-size:18px;line-height:1.6;color:#DDD8D3;">Un baúl de caoba con tres preguntas. Cada respuesta abre algo.</p>
+    <button onClick="{{ openChest }}" aria-label="Abrir el baúl" style="margin-top:130px;position:relative;width:min(400px,82vw);height:min(280px,58vw);background:transparent;border:0;padding:0;cursor:pointer;">
+      <span style="position:absolute;left:6%;right:6%;top:38%;height:10%;background:#C99A2E;opacity:{{ glow }};filter:blur(18px);transition:opacity 1s;"></span>
+      <span style="position:absolute;left:0;right:0;bottom:0;height:62%;background:#5C2416;border:3px solid #2E0E07;box-sizing:border-box;box-shadow:inset 0 -18px 0 rgba(0,0,0,.2),0 30px 60px rgba(0,0,0,.5);">
+        <span style="position:absolute;left:0;right:0;top:34%;height:3px;background:#3A140C;"></span>
+        <span style="position:absolute;left:0;right:0;top:68%;height:3px;background:#3A140C;"></span>
+        <span style="position:absolute;left:12%;top:0;bottom:0;width:16px;background:#C99A2E;"></span>
+        <span style="position:absolute;right:12%;top:0;bottom:0;width:16px;background:#C99A2E;"></span>
+        <span style="position:absolute;left:50%;top:-2px;width:46px;height:58px;transform:translateX(-50%);background:#C99A2E;border:2px solid #8A6410;box-sizing:border-box;">
+          <span style="position:absolute;left:50%;top:16px;width:10px;height:10px;border-radius:50%;background:#2E1F1B;transform:translateX(-50%);"></span>
+          <span style="position:absolute;left:50%;top:24px;width:4px;height:14px;background:#2E1F1B;transform:translateX(-50%);"></span>
+        </span>
+      </span>
+      <span style="position:absolute;left:-2%;right:-2%;top:0;height:42%;transform-origin:8% 100%;transform:{{ lidTransform }};transition:transform 1.1s cubic-bezier(.65,0,.35,1);">
+        <span style="position:absolute;inset:0;background:#6B2A1A;border:3px solid #2E0E07;border-radius:46% 46% 0 0 / 70% 70% 0 0;box-sizing:border-box;overflow:hidden;">
+          <span style="position:absolute;left:12%;top:0;bottom:0;width:16px;background:#C99A2E;"></span>
+          <span style="position:absolute;right:12%;top:0;bottom:0;width:16px;background:#C99A2E;"></span>
+          <span style="position:absolute;left:0;right:0;bottom:0;height:12px;background:#3A140C;"></span>
+        </span>
+      </span>
+    </button>
+    <p style="margin:28px 0 0;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#B8ADA6;">{{ chestHint }}</p>
+    <sc-if value="{{ chestOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:56px;width:100%;display:flex;flex-direction:column;gap:20px;text-align:left;">
+        <sc-for list="{{ questions }}" as="q" hint-placeholder-count="3">
+          <div style="background:#2E1F1B;border:1px solid {{ q.border }};padding:clamp(22px,4vw,34px);opacity:{{ q.opacity }};transition:opacity .6s,border-color .6s;">
+            <div style="display:flex;align-items:baseline;gap:16px;">
+              <span style="font-family:'Pinyon Script',cursive;font-size:52px;line-height:1;color:#C99A2E;">{{ q.num }}</span>
+              <p style="margin:0;font-size:19px;line-height:1.5;font-weight:500;color:#F4EFE9;">{{ q.text }}</p>
+            </div>
+            <sc-if value="{{ q.showInput }}" hint-placeholder-val="{{ true }}">
+              <form onSubmit="{{ q.submit }}" style="margin-top:20px;display:flex;flex-wrap:wrap;gap:12px;">
+                <input value="{{ q.value }}" onChange="{{ q.change }}" placeholder="Tu respuesta" style="flex:1 1 220px;min-width:0;padding:14px 16px;background:#1E1411;border:1px solid #6B5650;color:#F4EFE9;font:400 17px 'DM Sans',sans-serif;">
+                <button type="submit" style="padding:12px 20px;background:#C99A2E;color:#2E1F1B;border:0;font:600 13px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;padding:14px 22px;" style-hover="background:#DDB04A;">Abrir</button>
+              </form>
+              <sc-if value="{{ q.wrong }}" hint-placeholder-val="{{ false }}">
+                <p style="margin:12px 0 0;font-size:15px;color:#E39A78;">Casi. Prueba otra vez.</p>
+              </sc-if>
+            </sc-if>
+            <sc-if value="{{ q.locked }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:16px 0 0;font-size:14px;letter-spacing:.06em;color:#9A8A84;">Se abre al responder la anterior.</p>
+            </sc-if>
+            <sc-if value="{{ q.showText }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:22px;padding-top:22px;border-top:1px solid rgba(244,239,233,.16);">
+                <p style="margin:0 0 8px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Desbloqueado</p>
+                <p style="margin:0;font-size:18px;line-height:1.6;color:#F4EFE9;">{{ q.reward }}</p>
+              </div>
+            </sc-if>
+            <sc-if value="{{ q.showVideo }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:22px;padding-top:22px;border-top:1px solid rgba(244,239,233,.16);">
+                <p style="margin:0 0 8px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">Desbloqueado</p>
+                <p style="margin:0 0 16px;font-size:18px;line-height:1.6;color:#F4EFE9;">{{ q.reward }}</p>
+                <div style="display:flex;justify-content:center;"><div style="width:min(420px,100%);background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;box-shadow:0 24px 60px rgba(0,0,0,.5);"><video src="x/final.mp4" controls="" playsinline="" autoplay="" preload="auto" style="width:100%;max-height:78vh;display:block;background:#000;"></video></div></div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+  </div>
+  <p style="margin:clamp(90px,12vw,140px) 0 0;text-align:center;font-family:'Pinyon Script',cursive;font-size:40px;color:#C99A2E;">Te quiero, Laura.</p>
+  <p style="margin:10px 0 0;text-align:center;font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#9A8A84;">Albert · 23 · 11 · 2026</p>
+</section>
+
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeTrip }}" style="position:fixed;inset:0;z-index:100;background:rgba(30,20,17,.95);overflow-y:auto;">
+    <div onClick="{{ stop }}" style="max-width:1080px;margin:0 auto;padding:clamp(28px,6vw,72px) clamp(20px,5vw,56px);color:#F4EFE9;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;">
+        <div>
+          <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#C99A2E;">{{ trip.date }}</p>
+          <h3 style="margin:0;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(64px,10vw,120px);line-height:1;">{{ trip.name }}</h3>
+        </div>
+        <button onClick="{{ closeTrip }}" aria-label="Cerrar" style="flex:0 0 auto;width:48px;height:48px;background:transparent;border:1px solid #C99A2E;color:#F4EFE9;font:400 22px 'DM Sans',sans-serif;cursor:pointer;">×</button>
+      </div>
+      <p style="margin:24px 0 0;max-width:620px;font-size:18px;line-height:1.65;color:#DDD8D3;">{{ trip.line }}</p>
+      <div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;">
+        <sc-for list="{{ trip.photos }}" as="p" hint-placeholder-count="3">
+          <div style="background:#FBF8F3;padding:8px 8px 30px;box-sizing:border-box;transform:rotate({{ p.rot }}deg);"><img src="{{ p.src }}" alt="" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;"></div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  MEM = ['mem/m00.jpg','mem/m02.jpg','mem/m04.jpg','mem/m07.jpg','mem/m14.jpg','mem/m15.jpg','mem/m16.jpg','mem/m19.jpg'];
+  ENV = ['fotos/PHOTO-2026-02-08-21-49-46.jpg','fotos/PHOTO-2025-08-19-15-41-48.jpg'];
+  ING = [['pasta','Pasta'],['guanciale','Guanciale'],['pecorino','Pecorino'],['yema','Yema'],['pimienta','Pimienta']];
+  QUESTIONS = [
+    { text: '¿En qué cualidad es mejor Albert?', answers: ['empatia', 'la empatia'], contains: ['empat'], reward: 'Empatía. Correcto. Se abre la siguiente pregunta.' },
+    { text: '¿Cuál es el plato favorito que cocina Laura para Albert?', answers: ['espaguetis a la vongole'], contains: ['vongole', 'bongole', 'vongoles', 'bongoles'], reward: 'Espaguetis a la vongole. Correcto. Se abre la última pregunta.' },
+    { text: '¿Quién dijo «te quiero» primero?', answers: ['albert'], contains: ['albert'], reward: 'Albert. Correcto.', video: true }
+  ];
+  TRIPS = [
+    { name: 'Andorra', lab: [-10,-8,1], date: 'Navidad 2024', ll: [1.52, 42.51], line: 'Navidad de 2024. El viaje en el que salvé nuestra relación sin saber que estaba en peligro.', photos: ['n/andorra.jpg','n/andorra2.jpg'] },
+    { name: 'Tenerife', lab: [-10,4,1], date: 'Marzo 2025', ll: [-16.6, 28.3], line: 'Atardecer en Tenerife.', photos: ['n/tenerife.jpg','tf/tf1.jpg','tf/tf3.jpg','tf/tf4.jpg','tf/tf2.jpg'] },
+    { name: 'Francia', lab: [10,-4,0], date: 'Junio 2025', ll: [7.26, 43.70], line: 'Pueblos, helados, playa de piedras y mejillones con patatas.', photos: ['n/francia2.jpg','n/francia.jpg','fotos/PHOTO-2025-06-21-18-19-22%202.jpg','fotos/PHOTO-2025-06-21-18-19-23.jpg'] },
+    { name: 'Girona', lab: [9,-11,0], date: 'Agosto 2025', ll: [2.82, 41.98], line: 'Escapada a Girona.', photos: ['fotos/PHOTO-2025-08-31-20-24-37.jpg','fotos/PHOTO-2025-08-31-20-24-38.jpg'] },
+    { name: 'Ámsterdam', lab: [10,-6,0], date: 'Septiembre 2025', ll: [4.90, 52.37], line: 'Canales y bicis, con la mano recién cortada.', photos: ['fotos/PHOTO-2025-09-12-18-17-34.jpg','fotos/PHOTO-2025-09-12-18-17-32.jpg'] },
+    { name: 'Nueva York', lab: [10,4,0], date: 'Enero 2026', ll: [-74.0, 40.71], line: 'Un viaje muy chulo, justo antes de mudarnos. Nieve, patinaje, Top of the Rock y una chapita para el buzón.', photos: ['fotos/PHOTO-2026-03-06-12-46-25.jpg','fotos/PHOTO-2026-02-06-14-57-11.jpg','g/83B519B9-80D2-489F-BCDF-E1DFC2CFFA7B.jpg','fotos/PHOTO-2026-01-22-18-21-16.jpg'] },
+    { name: 'Londres', lab: [-10,6,1], date: 'Mayo 2026', ll: [-0.13, 51.51], line: 'Fuimos a ver a Arde Bogotá. Y un parque, tumbados en la hierba.', photos: ['fotos/PHOTO-2026-05-21-22-12-57.jpg','g/IMG_8149.jpg'] },
+    { name: 'Mallorca', lab: [10,14,0], date: 'Verano 2026', ll: [2.65, 39.57], line: 'Calas, piscina y sol.', photos: ['n/mallorca.jpg','fotos/PHOTO-2026-06-23-19-04-40.jpg','g/IMG_1844.jpg'] },
+    { name: 'Crucero', lab: [-10,4,1], date: 'Septiembre 2026', ll: [15.28, 37.85], line: 'De crucero por el Mediterráneo.', photos: ['fotos/PHOTO-2026-09-20-21-27-42.jpg','fotos/PHOTO-2026-09-20-21-27-42%202.jpg','fotos/PHOTO-2026-09-20-21-27-42%203.jpg'] }
+  ];
+  HOME = [2.17, 41.39];
+  TL = [['bizcocho','Bizcocho'],['condensada','Leche condensada'],['evaporada','Leche evaporada'],['entera','Leche entera'],['dulce','Dulce de leche']];
+  PRW = [[6,8,-8,34],[48,4,6,30],[14,40,4,40],[56,46,-5,36],[4,70,7,30],[40,70,-3,44],[66,24,10,28]];
+  DX = ['d01','d02','d03','d04','d08','d10','d12'];
+  QEQ = [['marina','Marina'],['katy','Katy'],['agustina','Agustina'],['laura','Laura'],['alicia','Alicia'],['pau','Pau'],['nan','Nan'],['wendy','Wendy'],['elena','Elena'],['martap','Marta P'],['alexgil','Álex Gil'],['julia','Julia'],['javi','Javi'],['pablo','Pablo'],['martaj','Marta J'],['elias','Elías'],['clara','Clara'],['papafrita','Papa Frita'],['lila','Lila'],['albert','Albert']];
+  NOPOS = [[90,-30],[-110,20],[60,40],[-70,-36],[120,10]];
+  PC = [['n/mallorca.jpg','Calas'],['fotos/PHOTO-2026-06-23-19-04-40.jpg','Piscina'],['g/IMG_1844.jpg','Sol']];
+  CASTLE = [['Poner el primer colchón','El salón, un sábado cualquiera'],['Poner el segundo colchón','Primer colchón'],['Echar el edredón','Dos colchones'],['Bajar la luz','Edredón y cojines'],['Darle al play','Luz muy bajita'],['Recoger el castillo','Noche de película']];
+  LIGHTS = Array.from({ length: 44 }, (_, i) => ({ left: (Math.random() * 96).toFixed(1), top: (Math.random() * 96).toFixed(1), size: 4 + Math.round(Math.random() * 4), delay: (Math.random() * 0.9).toFixed(2) }));
+
+  state = {
+    trip: null, chestOpen: false, solved: [false,false,false], vals: ['','',''], wrong: [false,false,false],
+    digits: [0,0,0,0], ing: {}, nata: false, mamut: 0, wed: false, env: [false,false],
+    deck: this.shuffle(), flipped: [], matched: [], darts: [], cook: false, score: [1,0], rematch: 0,
+    pring: 0, tl: {}, tlTrap: false, chapita: false, candles: [true,true,true], saved: false, door: false, suns: 0, sunTotal: 5,
+    cafe: false, dice: [1,1], diceScore: [0,0], rolls: 0, rolling: false, castle: 0, sunset: 0, cards: [false,false,false], concert: false, tiritas: [true,true], dixit: null, down: [], letter: 0, noN: 0
+  };
+  shuffle() { const a = [0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+  norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9ñ ]/g, '').trim(); }
+
+  DOODLES = {
+    girasol: () => { let p = ''; for (let k = 0; k < 12; k++) p += `<ellipse cx="50" cy="23" rx="8.5" ry="19" transform="rotate(${k*30} 50 50)" fill="#C99A2E" stroke="#2E1F1B" stroke-width="2"/>`; return `<svg viewBox="0 0 100 100" width="100%" height="100%">${p}<circle cx="50" cy="50" r="17" fill="#5A3A2A" stroke="#2E1F1B" stroke-width="2"/><circle cx="45" cy="46" r="2" fill="#C99A2E"/><circle cx="54" cy="52" r="2" fill="#C99A2E"/><circle cx="48" cy="56" r="2" fill="#C99A2E"/><circle cx="56" cy="44" r="2" fill="#C99A2E"/></svg>`; },
+    carbonara: () => `<svg viewBox="0 0 240 200" width="100%" height="100%"><ellipse cx="120" cy="132" rx="108" ry="54" fill="#FBF8F3" stroke="#2E1F1B" stroke-width="2.5"/><ellipse cx="120" cy="128" rx="80" ry="37" fill="none" stroke="#DDD8D3" stroke-width="2"/>
+      <g data-l="pasta" style="transition:opacity .5s,transform .6s"><g fill="none" stroke="#D9B45A" stroke-width="5" stroke-linecap="round"><path d="M62 128 C 80 98, 104 152, 126 118 S 168 98, 182 128"/><path d="M70 140 C 92 116, 116 160, 140 130 S 172 120, 176 144"/><path d="M84 112 C 100 92, 130 128, 150 104 S 176 112, 170 120"/><path d="M76 120 C 96 150, 128 96, 156 140"/><path d="M96 146 C 112 124, 138 158, 160 134"/></g><g fill="none" stroke="#2E1F1B" stroke-width="1" opacity=".35"><path d="M62 128 C 80 98, 104 152, 126 118 S 168 98, 182 128"/><path d="M70 140 C 92 116, 116 160, 140 130 S 172 120, 176 144"/></g></g>
+      <g data-l="guanciale" style="transition:opacity .5s,transform .6s"><g stroke="#2E1F1B" stroke-width="1.6"><rect x="82" y="112" width="15" height="11" rx="2" fill="#F1D9C9" transform="rotate(-12 90 117)"/><rect x="150" y="116" width="15" height="11" rx="2" fill="#F1D9C9" transform="rotate(18 157 121)"/><rect x="120" y="140" width="15" height="11" rx="2" fill="#F1D9C9" transform="rotate(6 127 145)"/><rect x="104" y="98" width="13" height="10" rx="2" fill="#F1D9C9" transform="rotate(24 110 103)"/><rect x="138" y="96" width="13" height="10" rx="2" fill="#F1D9C9"/></g><g fill="#B3552F"><rect x="85" y="115" width="10" height="3" transform="rotate(-12 90 117)"/><rect x="153" y="119" width="10" height="3" transform="rotate(18 157 121)"/><rect x="123" y="143" width="10" height="3"/></g></g>
+      <g data-l="pecorino" style="transition:opacity .5s,transform .6s" fill="#FFFDF7" stroke="#8A726B" stroke-width="1.2"><path d="M96 126 l8 -4 l2 7 z"/><path d="M132 112 l9 2 l-4 6 z"/><path d="M160 136 l7 -5 l3 7 z"/><path d="M110 148 l8 1 l-3 6 z"/><path d="M76 134 l7 -3 l1 7 z"/><path d="M146 146 l6 -4 l3 6 z"/></g>
+      <g data-l="yema" style="transition:opacity .5s,transform .6s"><circle cx="122" cy="118" r="15" fill="#E6A11F" stroke="#2E1F1B" stroke-width="2"/><ellipse cx="117" cy="113" rx="5" ry="3" fill="#F6D27A"/></g>
+      <g data-l="pimienta" style="transition:opacity .5s,transform .6s" fill="#2E1F1B"><circle cx="92" cy="104" r="1.6"/><circle cx="140" cy="128" r="1.6"/><circle cx="110" cy="134" r="1.4"/><circle cx="160" cy="110" r="1.6"/><circle cx="128" cy="100" r="1.4"/><circle cx="84" cy="140" r="1.6"/><circle cx="150" cy="148" r="1.4"/><circle cx="100" cy="118" r="1.4"/><circle cx="170" cy="132" r="1.6"/></g>
+      <g fill="none" stroke="#B8ADA6" stroke-width="2" stroke-linecap="round"><path d="M100 70 c -8 -12, 8 -18, 0 -32"/><path d="M122 64 c -8 -12, 8 -18, 0 -32"/><path d="M144 70 c -8 -12, 8 -18, 0 -32"/></g></svg>`,
+    mamut: () => `<svg viewBox="0 0 240 200" width="100%" height="100%"><g stroke="#2E1F1B" stroke-width="2.5" stroke-linejoin="round"><rect x="104" y="128" width="22" height="48" rx="8" fill="#7A4C38"/><rect x="170" y="128" width="22" height="48" rx="8" fill="#7A4C38"/><ellipse cx="146" cy="104" rx="74" ry="54" fill="#8A5A44"/><rect x="122" y="132" width="22" height="46" rx="8" fill="#8A5A44"/><rect x="186" y="130" width="22" height="46" rx="8" fill="#8A5A44"/><circle cx="76" cy="88" r="40" fill="#8A5A44"/><ellipse cx="96" cy="86" rx="16" ry="24" fill="#7A4C38"/></g><path d="M48 104 C 30 132, 34 168, 56 168 C 70 168, 70 152, 60 150" fill="none" stroke="#2E1F1B" stroke-width="18" stroke-linecap="round"/><path d="M48 104 C 30 132, 34 168, 56 168 C 70 168, 70 152, 60 150" fill="none" stroke="#8A5A44" stroke-width="13" stroke-linecap="round"/><path d="M62 112 C 44 138, 62 156, 92 144" fill="none" stroke="#2E1F1B" stroke-width="9" stroke-linecap="round"/><path d="M62 112 C 44 138, 62 156, 92 144" fill="none" stroke="#FBF8F3" stroke-width="5" stroke-linecap="round"/><circle cx="64" cy="80" r="4" fill="#2E1F1B"/><circle cx="65" cy="79" r="1.3" fill="#FBF8F3"/><g fill="none" stroke="#5A3A2A" stroke-width="2" stroke-linecap="round"><path d="M120 58 q 4 -12 10 -2"/><path d="M140 52 q 4 -12 10 -2"/><path d="M160 54 q 4 -12 10 -2"/><path d="M180 60 q 4 -12 10 -2"/><path d="M64 52 q 4 -14 12 -4"/></g><path d="M218 96 q 14 6 8 22" fill="none" stroke="#2E1F1B" stroke-width="3" stroke-linecap="round"/></svg>`,
+    mejillones: () => `<svg viewBox="0 0 240 200" width="100%" height="100%"><g stroke="#2E1F1B" stroke-width="2.5" stroke-linejoin="round"><path d="M14 112 h 140 c 0 46, -30 68, -70 68 s -70 -22, -70 -68 z" fill="#B3552F"/><ellipse cx="84" cy="112" rx="70" ry="14" fill="#3D2A25"/></g><g stroke="#2E1F1B" stroke-width="2"><ellipse cx="56" cy="104" rx="20" ry="10" fill="#2E1F1B" transform="rotate(-18 56 104)"/><ellipse cx="58" cy="102" rx="14" ry="6" fill="#E6A15A" transform="rotate(-18 58 102)"/><ellipse cx="92" cy="98" rx="21" ry="10" fill="#2E1F1B" transform="rotate(14 92 98)"/><ellipse cx="92" cy="96" rx="15" ry="6" fill="#E6A15A" transform="rotate(14 92 96)"/><ellipse cx="122" cy="106" rx="19" ry="9" fill="#2E1F1B" transform="rotate(-8 122 106)"/><ellipse cx="74" cy="114" rx="18" ry="8" fill="#3D2A25" transform="rotate(6 74 114)"/></g><g stroke="#2E1F1B" stroke-width="2"><rect x="176" y="40" width="10" height="70" fill="#E6B84A" transform="rotate(-10 181 75)"/><rect x="190" y="30" width="10" height="80" fill="#F1C95E" transform="rotate(4 195 70)"/><rect x="204" y="44" width="10" height="66" fill="#E6B84A" transform="rotate(14 209 77)"/><rect x="184" y="52" width="10" height="60" fill="#F1C95E" transform="rotate(-2 189 82)"/><path d="M166 92 h 64 l -32 96 z" fill="#FBF8F3"/></g><path d="M176 112 h 44" stroke="#B3552F" stroke-width="3"/></svg>`,
+    olas: () => `<svg viewBox="0 0 240 120" width="100%" height="100%"><circle cx="186" cy="42" r="24" fill="#C99A2E" stroke="#2E1F1B" stroke-width="2.5"/><g fill="none" stroke-linecap="round" stroke-width="3"><path d="M6 76 q 19 -14 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0" stroke="#B3552F"/><path d="M6 94 q 19 -14 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0" stroke="#3D2A25"/><path d="M6 112 q 19 -14 38 0 t 38 0 t 38 0 t 38 0 t 38 0 t 38 0" stroke="#C99A2E"/></g></svg>`
+  };
+
+  componentDidMount() {
+    const r = this.rootRef.current; if (!r) return; this.r = r;
+    this.mountAll();
+    this.mo = new MutationObserver(() => { clearTimeout(this.mt); this.mt = setTimeout(() => this.mountAll(), 200); });
+    this.mo.observe(r, { childList: true, subtree: true });
+    this.onScroll = () => { if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = null; this.tick(); }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onResize = () => { clearTimeout(this.rt); this.rt = setTimeout(() => { this.sizeMap(); this.drawMap(); this.tick(); }, 150); };
+    window.addEventListener('resize', this.onResize);
+    this.setupCounter(); this.setupParallax(); this.initMap(); this.tick();
+    const TVC = ['#3B5C7A','#7A5A3B','#2F4A5E','#8C6A48','#45607A','#5E3B2F','#A07850'];
+    this.tvi = setInterval(() => { const tv = this.r && this.r.querySelector('[data-tv]'); if (!tv) return; if (this.state.castle >= 5) { const c = TVC[Math.floor(Math.random() * TVC.length)]; tv.style.background = c; tv.style.boxShadow = '0 0 50px 18px ' + c + '88'; } else { tv.style.background = '#0c0c0c'; tv.style.boxShadow = 'none'; } }, 420);
+  }
+  componentDidUpdate() { this.applyCarb(); if (this.state.letter === 2 && this.r) requestAnimationFrame(() => this.r.querySelectorAll('[data-letter]').forEach(p => { p.style.opacity = '1'; p.style.transform = 'none'; })); }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onResize); window.removeEventListener('mousemove', this.onMove);
+    clearInterval(this.ci); clearInterval(this.tvi); clearInterval(this.di); [this.io, this.vio, this.sio, this.mo].forEach(o => o && o.disconnect());
+  }
+  once(el, key) { if (el['_' + key]) return false; el['_' + key] = true; return true; }
+
+  mountAll() {
+    const r = this.r;
+    r.querySelectorAll('[data-doodle]').forEach(el => { if (this.once(el, 'dd') && this.DOODLES[el.dataset.doodle]) el.insertAdjacentHTML('beforeend', this.DOODLES[el.dataset.doodle]()); });
+    this.applyCarb();
+    if (!this.io) this.io = new IntersectionObserver(es => es.forEach(e => this.onSeen(e)), { threshold: 0.2 });
+    r.querySelectorAll('[data-reveal],[data-stack],[data-fan]').forEach(el => { if (this.once(el, 'ob')) this.io.observe(el); });
+    if (!this.vio) this.vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { const p = v.play(); p && p.catch(() => {}); } else v.pause(); }), { threshold: 0.4 });
+    r.querySelectorAll('video[data-vid]').forEach(v => { if (this.once(v, 'v')) { v.muted = true; this.vio.observe(v); v.addEventListener('click', () => { v.muted = !v.muted; const p = v.play(); p && p.catch(() => {}); }); } });
+    r.querySelectorAll('[data-stack]').forEach(el => { if (this.once(el, 'st')) this.setupStack(el); });
+    r.querySelectorAll('[data-flip]').forEach(el => { if (this.once(el, 'fl')) this.setupScrub(el); });
+    r.querySelectorAll('[data-spot]').forEach(el => { if (this.once(el, 'sp')) this.setupSpot(el); });
+    r.querySelectorAll('[data-drag]').forEach(el => { if (this.once(el, 'dr')) this.setupDrag(el); });
+    r.querySelectorAll('[data-spin]').forEach(el => { if (this.once(el, 'sn')) this.setupSpin(el); });
+    r.querySelectorAll('[data-fog]').forEach(el => { if (this.once(el, 'fg')) this.setupFog(el); });
+    r.querySelectorAll('[data-sun]').forEach(el => { if (this.once(el, 'su')) el.addEventListener('click', () => { if (el._got) return; el._got = true; el.style.transform = 'scale(1.6) rotate(180deg)'; el.style.opacity = '0'; this.setState(s => ({ suns: s.suns + 1 })); }); });
+    if (!this.sio) this.sio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { this.activeTrip = +e.target.dataset.tripStep; this.updateMap(); } }), { rootMargin: '-45% 0px -45% 0px' });
+    r.querySelectorAll('[data-trip-step]').forEach(el => { if (this.once(el, 'ts')) this.sio.observe(el); });
+    r.querySelectorAll('[data-coaster]').forEach(el => { if (this.once(el, 'co')) this.setupCoaster(el); });
+    const nS = r.querySelectorAll('[data-sun]').length; if (nS && nS !== this.state.sunTotal) this.setState({ sunTotal: nS });
+    if (!this.geoDrawn && this.geo) this.drawMap();
+    this.sizeMap();
+  }
+  onSeen(e) {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    if (el.hasAttribute('data-stack')) { const s = el._s; if (!s || s.shown) return; s.shown = true; s.order.forEach((ci, k) => { s.cards[ci].style.transitionDelay = (k * 110) + 'ms'; }); this.layout(s); setTimeout(() => s.cards.forEach(c => { c.style.transitionDelay = '0ms'; }), 1400); }
+    else if (el.hasAttribute('data-fan')) { el.querySelectorAll('[data-fan-card]').forEach(c => { const d = +c.dataset.fanCard; c.style.transform = `translateX(${d * 9}px) rotate(${d}deg)`; }); }
+    else { el.style.opacity = '1'; el.style.transform = 'none'; }
+    this.io.unobserve(el);
+  }
+  setupStack(el) {
+    const cards = [...el.querySelectorAll('[data-card]')];
+    const s = { el, cards, order: cards.map((_, i) => i), shown: false, busy: false, rots: [-2, 4, -5, 3, -3, 5] };
+    el._s = s;
+    el.addEventListener('click', () => { if (cards.length < 2 || s.busy) return; s.busy = true; cards[s.order[0]].style.transform = 'translate(70%,-14%) rotate(14deg)'; setTimeout(() => { s.order.push(s.order.shift()); this.layout(s); setTimeout(() => { s.busy = false; }, 320); }, 360); });
+    el.addEventListener('mouseenter', () => { if (s.shown && cards.length > 1) this.layout(s, true); });
+    el.addEventListener('mouseleave', () => { if (s.shown) this.layout(s); });
+    this.layout(s);
+  }
+  layout(s, spread) {
+    const n = s.cards.length;
+    s.order.forEach((ci, k) => { const c = s.cards[ci]; c.style.zIndex = String(n - k); if (!s.shown) return; const f = spread ? 2.4 : 1; c.style.opacity = k < 4 ? '1' : '0'; c.style.transform = `translate(${k * 8 * f}px,${k * 5 * f}px) rotate(${s.rots[k % 6] * (k === 0 ? 0.5 : f)}deg)`; });
+  }
+  setupScrub(el) {
+    const imgs = [...el.querySelectorAll('[data-flip-img]')], bar = el.parentElement.querySelector('[data-flip-bar]');
+    const show = x => { const rc = el.getBoundingClientRect(); const i = Math.max(0, Math.min(imgs.length - 1, Math.floor((x - rc.left) / rc.width * imgs.length))); imgs.forEach((im, k) => { im.style.opacity = k === i ? '1' : '0'; }); if (bar) bar.style.width = ((i + 1) / imgs.length * 100) + '%'; };
+    el.addEventListener('pointermove', e => show(e.clientX));
+    el.addEventListener('pointerdown', e => show(e.clientX));
+  }
+  setupSpot(el) {
+    const ov = el.querySelector('[data-spot-ov]');
+    const set = (x, y, r) => { ov.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(30,20,17,0) 0, rgba(30,20,17,0) ${r}px, rgba(30,20,17,.94) ${r * 1.9}px)`; };
+    const c = () => set(el.clientWidth / 2, el.clientHeight * 0.4, 46); c();
+    el.addEventListener('pointermove', e => { const rc = el.getBoundingClientRect(); set(e.clientX - rc.left, e.clientY - rc.top, 95); });
+    el.addEventListener('pointerleave', c);
+    el.addEventListener('click', () => { ov.style.transition = 'opacity .8s'; ov.style.opacity = ov.style.opacity === '0' ? '1' : '0'; });
+  }
+  setupDrag(el) {
+    let down = false, sx = 0, sl = 0;
+    el.addEventListener('pointerdown', e => { down = true; sx = e.clientX; sl = el.scrollLeft; el.style.cursor = 'grabbing'; });
+    window.addEventListener('pointerup', () => { down = false; el.style.cursor = 'grab'; });
+    el.addEventListener('pointermove', e => { if (down && e.pointerType === 'mouse') el.scrollLeft = sl - (e.clientX - sx); });
+  }
+  setupSpin(el) {
+    let down = false, a0 = 0, rot = 0, base = 0;
+    const ang = e => { const rc = el.getBoundingClientRect(); return Math.atan2(e.clientY - rc.top - rc.height / 2, e.clientX - rc.left - rc.width / 2) * 180 / Math.PI; };
+    el.addEventListener('pointerdown', e => { down = true; a0 = ang(e); base = rot; el.setPointerCapture(e.pointerId); });
+    el.addEventListener('pointermove', e => { if (!down) return; rot = base + ang(e) - a0; el.style.transform = `rotate(${rot}deg)`; });
+    el.addEventListener('pointerup', () => { down = false; });
+  }
+  setupCoaster(el) {
+    const p = el.querySelector('[data-track]'), sup = el.querySelector('[data-supports]'); if (!p) return;
+    const L = p.getTotalLength(); el._L = L; el._p = p; let s = '';
+    for (let d = 20; d < L - 10; d += 22) { const pt = p.getPointAtLength(d); if (pt.y < 286) s += '<line x1="' + pt.x.toFixed(1) + '" y1="' + (pt.y + 4).toFixed(1) + '" x2="' + pt.x.toFixed(1) + '" y2="292"/>'; }
+    sup.innerHTML = s;
+  }
+  setupFog(cv) {
+    const p = cv.parentElement, ctx = cv.getContext('2d');
+    const fill = () => { cv.width = p.clientWidth; cv.height = p.clientHeight; ctx.globalCompositeOperation = 'source-over'; ctx.fillStyle = 'rgba(232,226,220,.93)'; ctx.fillRect(0, 0, cv.width, cv.height); ctx.fillStyle = '#8A726B'; ctx.font = '600 13px DM Sans, sans-serif'; ctx.textAlign = 'center'; ctx.fillText('LIMPIA EL ESPEJO', cv.width / 2, cv.height / 2); };
+    fill();
+    const wipe = e => { const rc = cv.getBoundingClientRect(); ctx.globalCompositeOperation = 'destination-out'; ctx.beginPath(); ctx.arc(e.clientX - rc.left, e.clientY - rc.top, 34, 0, Math.PI * 2); ctx.fill(); };
+    cv.addEventListener('pointermove', wipe); cv.addEventListener('pointerdown', wipe);
+  }
+  applyCarb() {
+    if (!this.r) return;
+    this.ING.forEach(([k]) => { const g = this.r.querySelector(`[data-l="${k}"]`); if (g) { const on = !!this.state.ing[k]; g.style.opacity = on ? '1' : '0'; g.style.transform = on ? 'none' : 'translateY(-14px)'; } });
+  }
+  setupCounter() {
+    const start = new Date(2024, 10, 23), d = this.r.querySelector('[data-days]');
+    const up = () => { if (d) d.textContent = Math.floor((new Date() - start) / 864e5).toLocaleString('es-ES'); };
+    up(); this.ci = setInterval(up, 60000);
+  }
+  setupParallax() {
+    const els = [...this.r.querySelectorAll('[data-par]')], base = els.map(e => e.style.transform);
+    this.onMove = ev => { const x = ev.clientX / innerWidth - 0.5, y = ev.clientY / innerHeight - 0.5; els.forEach((e, i) => { const k = +e.dataset.par; e.style.transform = `translate(${-x * k}px,${-y * k}px) ${base[i]}`; }); };
+    window.addEventListener('mousemove', this.onMove);
+  }
+  prog(el, vh) { const rc = el.getBoundingClientRect(); return Math.max(0, Math.min(1, (vh - rc.top) / (vh + rc.height))); }
+  tick() {
+    const r = this.r; if (!r) return; const vh = innerHeight, doc = document.documentElement;
+    const pb = r.querySelector('[data-progress]'); if (pb) pb.style.transform = `scaleX(${Math.min(1, scrollY / Math.max(1, doc.scrollHeight - vh))})`;
+    r.querySelectorAll('[data-swing]').forEach(s => { s.style.transform = `rotate(${Math.sin(scrollY / 90) * 5}deg)`; });
+    r.querySelectorAll('[data-tilt-card]').forEach(c => { const p = this.prog(c, vh); c.style.transform = `translateY(${(0.5 - p) * 60}px) rotate(${+c.dataset.tiltCard * (1 - p * 1.6)}deg)`; });
+    r.querySelectorAll('[data-bob]').forEach((b, i) => { b.style.transform = `translateY(${Math.sin(scrollY / 140 + i) * 12}px) rotate(${(i % 2 ? 1 : -1) * 3}deg)`; });
+    r.querySelectorAll('[data-sunspin]').forEach(s => { s.style.transform = `rotate(${scrollY / 4}deg)`; });
+    r.querySelectorAll('[data-coaster]').forEach(el => { if (!el._p) return; const k = Math.max(0, Math.min(1, this.prog(el, vh) * 1.7 - 0.35)); const a = el._p.getPointAtLength(k * el._L), b = el._p.getPointAtLength(Math.min(el._L, k * el._L + 2)); const ang = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI; el.querySelector('[data-cart]').setAttribute('transform', 'translate(' + a.x.toFixed(1) + ' ' + a.y.toFixed(1) + ') rotate(' + ang.toFixed(1) + ')'); el.querySelectorAll('[data-cphoto]').forEach(ph => { const on = k >= +ph.dataset.cphoto; ph.style.opacity = on ? '1' : '0'; ph.style.transform = on ? 'translateY(0) rotate(' + (ph === el.querySelector('[data-cphoto]') ? -6 : 3) + 'deg)' : 'translateY(24px) rotate(0deg)'; }); });
+    r.querySelectorAll('[data-cruise]').forEach(el => { const rc = el.getBoundingClientRect(); const k = Math.max(0, Math.min(1, (vh - rc.bottom) / (vh * 0.7))); const sh = el.querySelector('[data-ship]'), wk = el.querySelector('[data-walker]'), say = el.querySelector('[data-say]'); const dock = 30, W = 0.4; if (sh) sh.style.left = (k < W ? dock : dock + (k - W) / (1 - W) * (100 - dock)) + '%'; if (wk) { const wp = Math.min(1, k / W); wk.style.left = (wp * (dock - 7)) + '%'; wk.style.opacity = k < W ? '1' : '0'; wk.style.transform = 'translateX(-100%) translateY(' + (-Math.abs(Math.sin(k * 70)) * 4).toFixed(1) + 'px)'; } if (say) { say.style.opacity = k > 0.02 && k < W ? '1' : '0'; say.textContent = k < W * 0.85 ? '¡Esperad!' : '¡Ya llegamos!'; } el.querySelectorAll('[data-port]').forEach(pt => { const on = k >= +pt.dataset.port; pt.style.opacity = on ? '1' : '.12'; pt.style.transform = on ? 'rotate(-2deg) translateY(0)' : 'rotate(-2deg) translateY(20px)'; }); });
+    const hs = r.querySelector('[data-hscroll]');
+    if (hs) { const tr = hs.querySelector('[data-htrack]'), rc = hs.getBoundingClientRect(); const p = Math.max(0, Math.min(1, -rc.top / (rc.height - vh))); tr.style.transform = `translateX(${-p * Math.max(0, tr.scrollWidth - innerWidth)}px)`; }
+    if (!this.words) { const w = r.querySelector('[data-words]'); if (w) { const t = w.textContent; w.textContent = ''; this.words = t.split(/\s+/).filter(Boolean).map(x => { const s = document.createElement('span'); s.textContent = x + ' '; s.style.opacity = '.2'; s.style.transition = 'opacity .3s'; w.appendChild(s); return s; }); this.wordsEl = w; } }
+    if (this.words) { const rc = this.wordsEl.getBoundingClientRect(); const p = Math.max(0, Math.min(1, (vh * 0.85 - rc.top) / (rc.height + vh * 0.35))); const n = Math.round(p * this.words.length); this.words.forEach((s, i) => { s.style.opacity = i < n ? '1' : '.2'; }); }
+  }
+
+  sizeMap() { const st = this.r && this.r.querySelector('[data-mapsticky]'); if (!st) return; const narrow = innerWidth < 880; st.style.height = narrow ? '50vh' : '100vh'; st.style.flexBasis = narrow ? '100%' : '520px'; }
+  async initMap() {
+    try {
+      const [geo, topo] = await Promise.all([import('https://esm.sh/d3-geo@3'), import('https://esm.sh/topojson-client@3')]);
+      const world = await (await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json')).json();
+      this.geo = geo; this.land = topo.feature(world, world.objects.countries); this.drawMap();
+    } catch (e) { console.warn('map', e); }
+  }
+  drawMap() {
+    const el = this.r && this.r.querySelector('[data-map]'); if (!el || !this.geo) return;
+    const W = el.clientWidth, H = el.clientHeight; if (!W || !H) return;
+    this.geoDrawn = true;
+    const proj = this.geo.geoMercator().fitExtent([[20, 20], [W - 60, H - 20]], { type: 'MultiPoint', coordinates: [this.HOME, ...this.TRIPS.map(t => t.ll), [-76, 26], [17, 55]] });
+    const path = this.geo.geoPath(proj), [hx, hy] = proj(this.HOME);
+    let arcs = '', cities = '';
+    this.TRIPS.forEach((t, i) => {
+      const [x, y] = proj(t.ll), dx = x - hx, dy = y - hy, dist = Math.hypot(dx, dy);
+      const cx = (hx + x) / 2 - dy * 0.28 - (dist < 60 ? 30 : 0), cy = (hy + y) / 2 - Math.abs(dx) * 0.22 - Math.min(40, dist * 0.12) - 12;
+      arcs += `<path data-arc="${i}" d="M ${hx} ${hy} Q ${cx} ${cy} ${x} ${y}" fill="none" stroke="#C99A2E" stroke-width="1.8" stroke-linecap="round" style="transition:stroke-dashoffset 1.2s cubic-bezier(.65,0,.35,1),opacity .4s"/>`;
+      const lb = t.lab || [10, 4, 0];
+      cities += `<g data-city="${i}" style="transition:opacity .5s;opacity:.25;cursor:pointer"><circle cx="${x}" cy="${y}" r="4.5" fill="#C99A2E" stroke="#2E1F1B" stroke-width="2"/><text x="${x + lb[0]}" y="${y + lb[1]}" text-anchor="${lb[2] ? 'end' : 'start'}" paint-order="stroke" stroke="#2E1F1B" stroke-width="4" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="#F4EFE9">${t.name}</text></g>`;
+    });
+    el.innerHTML = `<svg width="${W}" height="${H}" style="display:block"><path d="${path(this.land)}" fill="#4A3631" stroke="#2E1F1B" stroke-width=".7"/>${arcs}${cities}<circle cx="${hx}" cy="${hy}" r="7" fill="#B3552F" stroke="#F4EFE9" stroke-width="2"/><text x="${hx - 12}" y="${hy + 22}" text-anchor="end" paint-order="stroke" stroke="#2E1F1B" stroke-width="4" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#C99A2E" style="letter-spacing:.16em">CASA</text></svg>`;
+    el.querySelectorAll('[data-arc]').forEach(a => { const L = a.getTotalLength(); a.dataset.len = L; a.style.strokeDasharray = L; a.style.strokeDashoffset = L; });
+    el.querySelectorAll('[data-city]').forEach(g => g.addEventListener('click', () => this.setState({ trip: +g.dataset.city })));
+    this.updateMap();
+  }
+  updateMap() {
+    const a = this.activeTrip ?? -1;
+    this.r.querySelectorAll('[data-trip-step]').forEach(el => { el.style.opacity = +el.dataset.tripStep === a ? '1' : '.35'; });
+    const el = this.r.querySelector('[data-map]'); if (!el) return;
+    el.querySelectorAll('[data-arc]').forEach(p => { const i = +p.dataset.arc; p.style.strokeDashoffset = i <= a ? 0 : p.dataset.len; p.style.opacity = i === a ? '1' : '.45'; });
+    el.querySelectorAll('[data-city]').forEach(g => { const i = +g.dataset.city; g.style.opacity = i === a ? '1' : i < a ? '.6' : '.2'; });
+  }
+
+  flipMem(i) {
+    const s = this.state; if (s.matched.includes(i) || s.flipped.includes(i) || s.flipped.length >= 2) return;
+    const f = [...s.flipped, i];
+    this.setState({ flipped: f });
+    if (f.length === 2) {
+      if (s.deck[f[0]] === s.deck[f[1]]) setTimeout(() => this.setState(t => ({ matched: [...t.matched, ...f], flipped: [] })), 450);
+      else setTimeout(() => this.setState({ flipped: [] }), 950);
+    }
+  }
+  throwDart(e) {
+    const rc = e.currentTarget.getBoundingClientRect();
+    const cx = (e.clientX - rc.left) / rc.width - 0.5, cy = (e.clientY - rc.top) / rc.height - 0.5;
+    const a = Math.atan2(cy || (Math.random() - 0.5), cx || (Math.random() - 0.5)) + (Math.random() - 0.5) * 0.8, r = 0.5 + Math.random() * 0.12;
+    const x = 0.5 + Math.cos(a) * r, y = 0.5 + Math.sin(a) * r, pts = 0;
+    this.setState(s => ({ darts: s.darts.length >= 3 ? [{ x, y, pts }] : [...s.darts, { x, y, pts }] }));
+  }
+  check(i) {
+    const q = this.QUESTIONS[i], n = this.norm(this.state.vals[i]); const ok = !!n && (q.answers.some(x => this.norm(x) === n) || (q.contains || []).some(c => n.includes(c)));
+    this.setState(s => { const solved = [...s.solved], wrong = [...s.wrong]; if (ok) solved[i] = true; else wrong[i] = true; return { solved, wrong }; });
+  }
+
+  rollDice() {
+    if (this.state.rolling) return; let n = 0; this.setState({ rolling: true });
+    this.di = setInterval(() => { n++; if (n < 10) { this.setState({ dice: [1 + Math.floor(Math.random() * 6), 1 + Math.floor(Math.random() * 6)] }); return; } clearInterval(this.di); const a = 2 + Math.floor(Math.random() * 5), l = 1 + Math.floor(Math.random() * (a - 1)); this.setState(s => ({ dice: [l, a], diceScore: [s.diceScore[0], s.diceScore[1] + 1], rolls: s.rolls + 1, rolling: false })); }, 70);
+  }
+  renderVals() {
+    const st = this.state, rots = [-2, 1.5, -1, 2.5, -2.5, 1];
+    const code = st.digits.join(''), lockOpen = code === '0809';
+    const ingOn = Object.values(st.ing).filter(Boolean).length;
+    const total = st.darts.reduce((a, d) => a + d.pts, 0);
+    const t = st.trip != null ? this.TRIPS[st.trip] : null;
+    const rematchMsgs = ['Laura gana. Como siempre.', 'Otra vez Laura.', 'Sin novedad: gana Laura.', 'Albert sigue entrenando.'];
+    const candlesOut = st.candles.every(c => !c);
+    return {
+      rootRef: this.rootRef,
+      sunShow: st.suns > 0, sunMsg: st.suns >= st.sunTotal ? 'Todos los girasoles. Nuestra flor.' : 'Girasoles encontrados: ' + st.suns + '/' + st.sunTotal,
+      digits: st.digits.map((v, i) => ({ v, gap: i === 1 ? 14 : 0, inc: () => this.setState(s => { const d = [...s.digits]; d[i] = (d[i] + 1) % 10; return { digits: d }; }) })),
+      lockOpacity: lockOpen ? 1 : 0, lockY: lockOpen ? 0 : 40,
+      lockMsg: lockOpen ? 'Abierto. Sabía que lo sacarías.' : 'Pulsa los números', lockColor: lockOpen ? '#C99A2E' : '#B8ADA6',
+      ingredients: this.ING.map(([k, label]) => ({ label, bg: st.ing[k] ? '#2E1F1B' : 'transparent', fg: st.ing[k] ? '#F4EFE9' : '#2E1F1B', add: () => this.setState(s => ({ ing: { ...s.ing, [k]: !s.ing[k] }, nata: false })) })),
+      addNata: () => this.setState({ nata: true }),
+      carbMsg: st.nata ? 'Nata no. Jamás.' : ingOn === 5 ? 'Carbonara de verdad. Para los dos.' : '',
+      carbPhoto: ingOn === 5 ? 1 : 0, carbScale: ingOn === 5 ? 1 : 0.6,
+      pokeMamut: () => this.setState(s => ({ mamut: s.mamut + 1 })),
+      mamutOp: st.mamut > 0 ? 1 : 0, mamutY: st.mamut > 0 ? 0 : 30,
+      mamutHint: st.mamut === 0 ? 'Pulsa al mamut' : st.mamut === 1 ? '¡Brrruuum!' : st.mamut < 4 ? 'Sigue roncando.' : 'Vale, era un mastodonte.',
+      mamutShake: st.mamut % 2 ? 'rotate(-3deg)' : 'rotate(2deg)',
+      openWed: () => this.setState(s => ({ wed: !s.wed })), wedBg: st.wed ? '#B3552F' : 'transparent', wedFg: st.wed ? '#F4EFE9' : '#B3552F', wedH: st.wed ? 560 : 0,
+      saveRel: () => this.setState({ saved: true }), relW: st.saved ? 100 : 12, relColor: st.saved ? '#C99A2E' : '#B3552F',
+      relLabel: st.saved ? 'Relación: a salvo' : 'Relación: en peligro', relBtn: st.saved ? 'Salvada' : 'Salvar la relación',
+      openDoor: () => this.setState(s => ({ door: !s.door })), doorT: st.door ? 'rotateY(-105deg)' : 'none', doorHint: st.door ? 'Abierta. A la primera, por una vez.' : 'Pulsa la puerta',
+      envelopes: this.ENV.map((src, i) => ({ src, rot: i ? 3 : -4, delay: st.env[i] ? 0.35 : 0, letterY: st.env[i] ? -62 : 0, flap: st.env[i] ? 180 : 0, flapZ: st.env[i] ? 0 : 3, letterZ: st.env[i] ? 4 : 1, toggle: () => this.setState(s => { const e = [...s.env]; e[i] = !e[i]; return { env: e }; }) })),
+      memCards: st.deck.map((p, i) => { const up = st.flipped.includes(i) || st.matched.includes(i); return { src: this.MEM[p], rot: up ? 180 : 0, op: st.matched.includes(i) ? 0.55 : 1, flip: () => this.flipMem(i) }; }),
+      memMsg: st.matched.length === 16 ? 'Completado. Memoria de elefante (o de mamut).' : `Parejas: ${st.matched.length / 2} de 8`,
+      memReset: () => this.setState({ deck: this.shuffle(), flipped: [], matched: [] }),
+      darts: st.darts.map(d => ({ left: (d.x * 100).toFixed(1), top: (d.y * 100).toFixed(1) })),
+      throwDart: e => this.throwDart(e),
+      dartMsg: st.darts.length === 0 ? 'Tres dardos. Pulsa la diana.' : ['Fuera.', 'Fuera otra vez.', 'Cero puntos. Laura falla.'][st.darts.length - 1] + (st.darts.length === 3 ? ' Pulsa para otra ronda' : ''),
+      toggleCook: () => this.setState(s => ({ cook: !s.cook })), cookA: st.cook ? 0 : 1, cookB: st.cook ? 1 : 0, cookLabel: st.cook ? 'Ver la idea' : 'Ver cómo salió',
+      cookTitle: st.cook ? 'Realidad' : 'La idea',
+      score: st.score, scoreL: st.score[0], scoreA: st.score[1],
+      rematch: () => this.setState(s => ({ score: [s.score[0] + 1, s.score[1]], rematch: s.rematch + 1 })),
+      rematchMsg: st.rematch === 0 ? 'Me ganó, como siempre.' : rematchMsgs[(st.rematch - 1) % rematchMsgs.length],
+      putChapita: () => this.setState({ chapita: true }), chapitaY: st.chapita ? 0 : -110, chapitaOp: st.chapita ? 1 : 0.0, chapitaBtn: st.chapita ? 'Ya es nuestro' : 'Poner la chapita',
+      candles: st.candles.map((on, i) => ({ flame: on ? 1 : 0, blow: () => this.setState(s => { const c = [...s.candles]; c[i] = false; return { candles: c }; }) })),
+      cakeMsg: candlesOut ? 'Pide un deseo. Y a hacer pasta.' : 'Sopla las velas', cakeH: candlesOut ? 620 : 0,
+      trips: this.TRIPS.map((tr, i) => ({ ...tr, num: String(i + 1).padStart(2, '0'), date: tr.date || 'Fecha por poner', open: () => this.setState({ trip: i }) })),
+      modalOpen: !!t,
+      trip: t ? { name: t.name, date: t.date || '', line: t.line, photos: t.photos.map((src, k) => ({ src, rot: rots[k % 6] })) } : { photos: [] },
+      closeTrip: () => this.setState({ trip: null }), stop: e => e.stopPropagation(),
+      canjear: () => this.setState(s => ({ cafe: !s.cafe })), cafeOp: st.cafe ? 1 : 0, cafeY: st.cafe ? 0 : 30, cafeEmpty: st.cafe ? 0 : 1,
+      ticketT: st.cafe ? 'translate(-102%,4%) rotate(-8deg) scale(.66)' : 'translate(-50%,-50%) rotate(-3deg)', stampOp: st.cafe ? 1 : 0, stampS: st.cafe ? 1 : 1.8, cafeBtn: st.cafe ? 'Guardar el vale' : 'Canjear el café',
+      diceL: st.dice[0], diceA: st.dice[1], diceSL: st.diceScore[0], diceSA: st.diceScore[1], diceRot: st.rolling ? (Math.random() * 30 - 15).toFixed(0) : 0, rollDice: () => this.rollDice(),
+      diceMsg: st.rolling ? 'Rodando…' : st.rolls === 0 ? '' : ['Gana Albert. Qué raro.', 'Otra para Albert.', 'Laura empieza a enfadarse.', 'Laura ya no habla.', 'Albert, imparable.'][(st.rolls - 1) % 5],
+      diceFilter: st.rolls ? 'none' : 'grayscale(1) brightness(.7) blur(8px)', diceCap: st.rolls ? 'La cara de perder' : '',
+      castleNext: () => this.setState(s => ({ castle: s.castle >= 5 ? 0 : s.castle + 1 })), castleBtn: this.CASTLE[st.castle][0] + ' →', castleCap: this.CASTLE[st.castle][1],
+      castleSteps: [1,2,3,4,5].map(k => ({ bg: st.castle >= k ? '#C99A2E' : 'rgba(244,239,233,.2)' })),
+      m1Op: st.castle >= 1 ? 1 : 0, m1Y: st.castle >= 1 ? 0 : 140, m2Op: st.castle >= 2 ? 1 : 0, m2Y: st.castle >= 2 ? 0 : 160, duvOp: st.castle >= 3 ? 1 : 0, duvY: st.castle >= 3 ? 0 : 110, pilOp: st.castle >= 3 ? 1 : 0, pilY: st.castle >= 3 ? 0 : 30,
+      dimOp: st.castle >= 4 ? 0.62 : 0, tintOp: st.castle >= 4 ? 0.3 : 0, lampOp: st.castle >= 4 ? 1 : 0, tvOp: st.castle >= 5 ? 1 : 0,
+      sunset: st.sunset, onSunset: e => this.setState({ sunset: +e.target.value }), tfSunTop: Math.round(6 + st.sunset / 100 * 54), tfSunColor: st.sunset > 60 ? '#D9772E' : '#C99A2E',
+      tfFilter: 'saturate(' + (0.25 + st.sunset / 100 * 0.9).toFixed(2) + ') brightness(' + (1.3 - st.sunset / 100 * 0.3).toFixed(2) + ') sepia(' + (st.sunset / 100 * 0.15).toFixed(2) + ')', tfMsg: st.sunset >= 95 ? 'Ahora sí.' : '',
+      postcards: this.PC.map(([src, label], i) => ({ src, label, rot: [-3, 2, -1][i], flip: st.cards[i] ? 180 : 0, toggle: () => this.setState(s => { const c = [...s.cards]; c[i] = !c[i]; return { cards: c }; }) })),
+      concertToggle: () => this.setState(s => ({ concert: !s.concert })), concertBtn: st.concert ? 'Apagar las luces' : 'Encender el móvil', concertFilter: st.concert ? 'none' : 'brightness(.32) saturate(.6)',
+      lights: this.LIGHTS.map(l => ({ ...l, op: st.concert ? 1 : 0 })),
+      tiritas: st.tiritas.map((on, i) => { const base = i ? -32 : 32, dir = i ? -1 : 1; return { op: on ? 1 : 0, t: on ? 'rotate(' + base + 'deg)' : 'translate(' + (dir * 120) + '%,-160%) rotate(' + (base + dir * 70) + 'deg)', peel: () => this.setState(s => { const t = [...s.tiritas]; t[i] = false; return { tiritas: t }; }) }; }),
+      narizFilter: st.tiritas.some(Boolean) ? 'brightness(.85)' : 'none', narizMsg: st.tiritas.every(t => !t) ? 'Gracias por cuidarme.' : '',
+      dixitCards: this.DX.map((d, i) => { const n = this.DX.length, rot = (i - (n - 1) / 2) * 11; return { src: 'dixit/' + d + '.png', rot: rot.toFixed(1), lift: st.dixit === i ? -40 : 0, z: i + 1, pick: () => this.setState({ dixit: i }) }; }),
+      dixitOpen: st.dixit != null, dixitSrc: st.dixit != null ? 'dixit/' + this.DX[st.dixit] + '.png' : '', dixitClose: () => this.setState({ dixit: null }),
+      qeq: this.QEQ.map(([k, name], i) => ({ name, src: 'qeq/' + k + '.png', rx: st.down.includes(i) ? -88 : 0, toggle: () => this.setState(s => ({ down: s.down.includes(i) ? s.down.filter(x => x !== i) : [...s.down, i] })) })),
+      qeqMsg: (() => { const up = this.QEQ.length - st.down.length; if (up === 1) { const i = this.QEQ.findIndex((_, k) => !st.down.includes(k)); return '¿Es ' + this.QEQ[i][1] + '?'; } if (up === 0) return 'No queda nadie.'; return st.down.length ? 'Quedan ' + up : ''; })(),
+      qeqReset: () => this.setState({ down: [] }),
+      letterClosed: st.letter < 2, letterAsking: st.letter === 1, letterOpen: st.letter === 2, letterAsk: () => this.setState({ letter: 1 }), letterYes: () => this.setState({ letter: 2 }),
+      letterDodge: () => this.setState(s => ({ noN: s.noN + 1 })), noX: st.noN ? this.NOPOS[(st.noN - 1) % 5][0] : 0, noY: st.noN ? this.NOPOS[(st.noN - 1) % 5][1] : 0,
+      noMsg: st.noN === 0 ? '' : st.noN < 3 ? 'Esa respuesta no está disponible.' : 'Ya sabemos que sí.',
+      pringados: this.PRW.map(([l, t, r, s], i) => ({ left: l, top: t, rot: r, size: s, op: st.pring > i ? 1 : 0 })),
+      pringPips: [0,1,2,3,4,5,6].map(i => ({ bg: st.pring > i ? '#C99A2E' : 'transparent' })),
+      sayPringado: () => this.setState(s => ({ pring: s.pring >= 7 ? 0 : s.pring + 1 })), pringBtn: st.pring >= 7 ? 'Otra vez' : st.pring === 0 ? 'Lo dejamos' : 'Lo dejamos (' + st.pring + '/7)',
+      sevenOp: st.pring >= 7 ? 1 : 0, sevenS: st.pring >= 7 ? 1 : 0.2, sevenR: st.pring >= 7 ? 0 : -90,
+      tlIng: this.TL.map(([k, label]) => ({ label, bg: st.tl[k] ? '#2E1F1B' : 'transparent', fg: st.tl[k] ? '#F4EFE9' : '#2E1F1B', add: () => this.setState(s => ({ tl: { ...s.tl, [k]: !s.tl[k] }, tlTrap: false })) })),
+      tlTrap: () => this.setState({ tlTrap: true }),
+      tlCakeOp: st.tl.bizcocho ? 1 : 0, tlCakeY: st.tl.bizcocho ? 0 : -30,
+      tlSoak: st.tl.bizcocho ? ['condensada','evaporada','entera'].filter(k => st.tl[k]).length * 33.4 : 0,
+      tlDulceOp: st.tl.bizcocho && st.tl.dulce ? 1 : 0, tlDulceY: st.tl.bizcocho && st.tl.dulce ? 0 : -40, dripS: st.tl.bizcocho && st.tl.dulce ? 1 : 0,
+      tlPhoto: this.TL.every(([k]) => st.tl[k]) ? 1 : 0, tlScale: this.TL.every(([k]) => st.tl[k]) ? 1 : 0.6,
+      tlMsg: st.tlTrap ? 'Fondant no. Esto es una cuatro leches.' : this.TL.every(([k]) => st.tl[k]) ? 'Cuatro leches. Para ti.' : (st.tl.dulce && !st.tl.bizcocho) ? 'Primero el bizcocho.' : '',
+      chestOpen: st.chestOpen, openChest: () => this.setState({ chestOpen: true }),
+      lidTransform: st.chestOpen ? 'translate(-4%,-30%) rotate(-20deg)' : 'none', glow: st.chestOpen ? 0.9 : 0, chestHint: st.chestOpen ? 'Abierto' : 'Pulsa el baúl',
+      questions: this.QUESTIONS.map((q, i) => {
+        const visible = i === 0 || st.solved[i - 1], solved = st.solved[i];
+        return { num: String(i + 1), text: visible ? q.text : 'Pregunta cerrada', reward: q.reward || '', value: st.vals[i], showInput: visible && !solved, locked: !visible, wrong: st.wrong[i], showText: solved && !q.video, showVideo: solved && !!q.video, opacity: visible ? 1 : 0.45, border: solved ? '#C99A2E' : 'rgba(244,239,233,.14)', change: e => { const v = e.target.value; this.setState(s => { const vals = [...s.vals]; vals[i] = v; const w = [...s.wrong]; w[i] = false; return { vals, wrong: w }; }); }, submit: e => { e.preventDefault(); this.check(i); } };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
